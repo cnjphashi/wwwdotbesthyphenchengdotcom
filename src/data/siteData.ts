@@ -250,6 +250,36 @@ export const facilities = [
     description: "Low-cost Toys",
     image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E4%BD%8E%E4%BB%B7%E7%8E%A9%E5%85%B7.webp",
   },
+  {
+    title: "光るおもちゃ",
+    description: "Light-Up Toys",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E5%8F%91%E5%85%89%E7%8E%A9%E5%85%B7.webp",
+  },
+  {
+    title: "木製おもちゃ",
+    description: "Wooden Toys",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E6%9C%A8%E5%88%B6%E7%8E%A9%E5%85%B7.webp",
+  },
+  {
+    title: "食玩",
+    description: "Candy Toys",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E9%A3%9F%E7%8E%A9.webp",
+  },
+  {
+    title: "シール",
+    description: " Stickers",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E8%B4%B4%E7%BA%B8.webp",
+  },
+  {
+    title: "バインダー",
+    description: "Binders",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E6%B4%BB%E9%A1%B5%E5%A4%B9.webp",
+  },
+  {
+    title: "ペン",
+    description: "Pens",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E7%AC%94.webp",
+  },
 ];
 
 export const faqs = [
