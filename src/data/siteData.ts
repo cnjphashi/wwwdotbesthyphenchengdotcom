@@ -1,6 +1,6 @@
 export const siteData = {
   name: "Hatcatoy",
-  tagline: "汇集全球引人入胜的赠品。",
+  tagline: "人を惹きつける景品を、世界から。",
   description: "ゲームセンター・販促を支える、魅力ある景品ソリューション。",
   address: "123 Fitness Street, Health City, HC 12345",
   phone: "+1 (555) 123-4567",
