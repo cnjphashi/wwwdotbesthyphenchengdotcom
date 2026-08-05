@@ -1,1 +1,141 @@
-/
+---
+const apiUrl =
+  "https://cnjphashi.com/wp-json/wp/v2/posts?categories=557&per_page=3&_embed";
+
+let news = [];
+
+try {
+  const res = await fetch(apiUrl);
+
+  if (res.ok) {
+    news = await res.json();
+  }
+} catch (error) {
+  console.error("Failed to fetch WordPress news:", error);
+}
+---
+
+<section id="news" class="py-20 bg-slate-900">
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+    <!-- 标题 -->
+    <div class="text-center mb-12">
+
+      <h2 class="text-2xl md:text-3xl font-medium text-white mb-4">
+        最新情報
+      </h2>
+
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+        HATCATOYからのお知らせをご紹介します。
+      </p>
+
+    </div>
+
+
+    <!-- 新闻列表 -->
+    <div class="space-y-4">
+
+
+      {
+        news.map((item) => {
+
+          const title = item.title.rendered;
+
+          const date = new Date(item.date)
+            .toLocaleDateString("ja-JP", {
+              year: "numeric",
+              month: "2-digit",
+              day: "2-digit"
+            });
+
+
+          const image =
+            item._embedded?.["wp:featuredmedia"]?.[0]
+              ?.source_url;
+
+
+          return (
+
+            <a
+              href={`/news/${item.slug}/`}
+              class="
+                block
+                bg-slate-900
+                border
+                border-slate-700
+                rounded-xl
+                px-6
+                py-5
+                hover:border-orange-500
+                transition
+              "
+            >
+
+              <div class="flex flex-col md:flex-row md:items-center gap-5">
+
+
+                <!-- 图片 -->
+                {
+                  image && (
+                    <img
+                      src={image}
+                      alt={title}
+                      class="
+                        w-full
+                        md:w-40
+                        h-24
+                        object-cover
+                        rounded-lg
+                      "
+                    />
+                  )
+                }
+
+
+                <div class="flex-1">
+
+
+                  <div class="text-sm text-gray-400 mb-2">
+                    {date}
+                  </div>
+
+
+                  <h3 class="
+                    text-lg
+                    text-white
+                    font-medium
+                    leading-relaxed
+                  ">
+                    {title}
+                  </h3>
+
+
+                </div>
+
+
+                <div class="
+                  text-orange-400
+                  text-xl
+                ">
+                  →
+                </div>
+
+
+              </div>
+
+            </a>
+
+          );
+
+        })
+      }
+
+
+    </div>
+
+
+  </div>
+
+</section>
