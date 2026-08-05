@@ -2,8 +2,8 @@
 
 @theme {
   /* Typography - Custom Font Families */
-  --font-family-heading: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
-  --font-family-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-family-heading: "Montserrat", "Noto Sans JP", sans-serif;
+  --font-family-body: "Inter", "Noto Sans JP", sans-serif;
 
   /* Color Theme - Primary Colors */
   --color-primary: oklch(70.5% 0.213 47.604); /* orange-500 */
