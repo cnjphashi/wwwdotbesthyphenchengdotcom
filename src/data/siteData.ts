@@ -222,8 +222,8 @@ export const testimonials = [
 export const facilities = [
   {
     title: "DIY",
-    description: "State-of-the-art treadmills, ellipticals, and bikes",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&q=80",
+    description: "DIY Toys",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/DIY%E7%8E%A9%E5%85%B7.webp",
   },
   {
     title: "Strength Training",
