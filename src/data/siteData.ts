@@ -48,7 +48,7 @@ export const contactInfo = [
 ];
 
 export const navigation = [
-  { name: "Home", href: "/" },
+  { name: "ホーム", href: "/" },
   { name: "About", href: "/about" },
   { name: "Classes", href: "/classes" },
   { name: "Pricing", href: "/pricing" },
