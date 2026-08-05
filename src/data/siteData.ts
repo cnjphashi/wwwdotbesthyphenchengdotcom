@@ -290,7 +290,7 @@ export const facilities = [
     title: "ペン",
     description: "Pens",
     image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E7%AC%94.webp",
-    link: "https://cnjphashi.com/ja/product-category/omocha/nuigurumi/",
+    link: "https://cnjphashi.com/ja/product-category/bunbougu/pen/",
   },
 ];
 
