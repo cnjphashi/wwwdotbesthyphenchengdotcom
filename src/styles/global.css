@@ -6,10 +6,10 @@
   --font-family-body: "Noto Sans JP", sans-serif;
 
   /* Color Theme - Primary Colors */
-  --color-primary: #FB2C36; /* orange-500 */
-  --color-primary-hover: #E7180B; /* orange-600 */
-  --color-primary-light: #FF6467; /* orange-400 */
-  --color-primary-dark: #C11007; /* orange-700 */
+  --color-primary: oklch(0.638 0.237 25.44); /* #FB2C36 */
+  --color-primary-hover: oklch(0.589 0.233 29.63); /* #E7180B */
+  --color-primary-light: oklch(0.702 0.189 22.23); /* #FF6467 */
+  --color-primary-dark: oklch(0.514 0.204 29.49); /* #C11007 */
 
   /* Color Theme - Background Colors */
   --color-bg-primary: oklch(20.8% 0.042 265.755); /* slate-900 */
