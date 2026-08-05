@@ -221,7 +221,7 @@ export const testimonials = [
 
 export const facilities = [
   {
-    title: "Cardio Zone",
+    title: "DIY",
     description: "State-of-the-art treadmills, ellipticals, and bikes",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&q=80",
   },
@@ -254,28 +254,32 @@ export const facilities = [
 
 export const faqs = [
   {
-    question: "Do I need to be fit to join?",
-    answer: "Not at all! We welcome members of all fitness levels. Our trainers will help you start at your own pace and gradually build your strength and endurance.",
+    question: "Hatcatoyが得意の分野は。",
+    answer: "弊社は、アミューズメント景品関連の幅広い玩具製品を扱っております。当社の製品カテゴリーには、プラスチック玩具、ぬいぐるみ、電子玩具、パズル玩具などがあります。",
   },
   {
-    question: "What should I bring to the gym?",
-    answer: "Just bring a water bottle, towel, and comfortable workout clothes. We provide all equipment, lockers, and shower facilities.",
+    question: "Hatcatoyは取扱商品以外でも対応できますか。",
+    answer: "はい、弊社は世界最大の雑貨卸市場義烏を拠点に、たくさんの工場と提携しており、取扱商品以外の商品をご提案・生産も可能です。",
   },
   {
-    question: "Can I try the gym before committing?",
-    answer: "Yes! We offer a free 7-day trial pass so you can experience our facilities, classes, and community before making a commitment.",
+    question: "Hatcatoy製品の最低注文数量はいくらですか。",
+    answer: "最小発注量は、製品の仕様、カスタマイズの条件によって異なります。具体的な製品の最低注文数量については、弊社までお問い合わせください。 ",
   },
   {
-    question: "Are personal trainers included?",
-    answer: "Personal training is available as an add-on service. Premium and Elite memberships include consultation sessions, and Elite members get unlimited personal training.",
+    question: "カスタマイズされた製品の方法、流れは。",
+    answer: "カスタマイズ製品は通常、OEM/ODMの2つの方法です。OEM生産とはOriginal Equipment Manufacturerの略で「企画・受託製造」です。ODM生産とはOriginal Design Manufacturingの略で、「委託設計・生産」のことです。通常、次のような流れです。打ち合わせ → 商品企画のご提案→お見積り→サンプルのご確認→ご発注　生産・検品→納品。具体的な状況はお客様のニーズによって異なります。",
   },
   {
-    question: "What are your operating hours?",
-    answer: "We're open 24/7 for Premium and Elite members. Basic members have access during staffed hours (5 AM - 11 PM).",
+    question: "日本国内銀行での支払いは可能ですか。",
+    answer: "はい、日本国内銀行振込みに対応して、支払いが簡単です。",
   },
   {
-    question: "Is there parking available?",
-    answer: "Yes, we have free parking available for all members. The parking lot is well-lit and secure.",
+    question: "製品に不良があった場合、アフターサービスはどのように対応しますか。",
+    answer: "弊社は高品質のアフターサービスが信頼を築く鍵であると信じています。もし製品に不良がある場合、すぐに対応し、問題の原因を調査し、解決策を提供します。お客様に迅速なアフターサポートを提供することをお約束します。",
+  },
+  {
+    question: "Hactcatoyは製品安全性の検査をサポートできますか。",
+    answer: "はい、弊社は国際的な検査機関であるSGSと長年の協力関係を持っております。製品の検査サービスに対応可能です。",
   },
 ];
 
