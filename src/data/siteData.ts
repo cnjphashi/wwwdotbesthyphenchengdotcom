@@ -49,10 +49,10 @@ export const contactInfo = [
 
 export const navigation = [
   { name: "ホーム", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Classes", href: "/classes" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "Contact", href: "/contact" },
+  { name: "取扱商品", href: "/#products" },
+  { name: "選ばれる理由", href: "/#why-choose-us" },
+  { name: "会社概要", href: "/#company-profile" },
+  { name: "お問い合わせ", href: "/#contact" },
 ];
 
 export const features = [
