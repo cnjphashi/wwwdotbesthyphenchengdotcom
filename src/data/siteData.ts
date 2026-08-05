@@ -532,3 +532,6 @@ export const paymentOptions = {
   trial: "Free 7-day trial available for new members",
 };
 
+export const companyProfile = {
+};
+
