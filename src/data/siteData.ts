@@ -52,7 +52,7 @@ export const navigation = [
   { name: "会社概要", href: "/#company-profile" },
   { name: "ニュース", href: "/#news" },
   { name: "よくある質問", href: "/#faq" },
-  { name: "お問い合わせ", href: "/contact/" },
+  { name: "お問い合わせ", href: "https://cnjphashi.com/ja/sapoto/otoiawase/" },
 ];
 
 export const relatedLinks = [
