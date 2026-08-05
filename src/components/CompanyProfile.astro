@@ -14,7 +14,6 @@ import { companyProfile } from '../data/siteData';
       </p>
     </div>
 
-
     <div class="bg-slate-900 rounded-xl border border-slate-700 overflow-hidden">
 
       {companyProfile.map((item) => (
@@ -25,7 +24,13 @@ import { companyProfile } from '../data/siteData';
           </div>
 
           <div class="md:col-span-2 text-gray-300 leading-relaxed">
-            {item.description}
+            {
+              Array.isArray(item.description)
+                ? item.description.map((line) => (
+                    <div>{line}</div>
+                  ))
+                : item.description
+            }
           </div>
 
         </div>
