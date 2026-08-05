@@ -2,9 +2,9 @@ export const siteData = {
   name: "Hatcatoy",
   tagline: "人を惹きつける景品を、世界から。",
   description: "ゲームセンター・販促を支える、魅力ある景品ソリューション。",
-  address: "123 Fitness Street, Health City, HC 12345",
-  phone: "+1 (555) 123-4567",
-  email: "info@fitzonegym.com",
+  address: "浙江省義烏市北苑街景三路29号1棟3階",
+  phone: "",
+  email: "",
   social: {
     facebook: "https://facebook.com",
     instagram: "https://instagram.com",
@@ -57,33 +57,33 @@ export const navigation = [
 
 export const features = [
   {
-    title: "24/7 Access",
-    description: "Work out on your schedule with round-the-clock access to our facilities",
+    title: "日本市場を熟知",
+    description: "日本の商習慣・品質基準を理解した提案力。",
     icon: "ri-time-line",
   },
   {
-    title: "Expert Trainers",
-    description: "Certified personal trainers to guide you on your fitness journey",
+    title: "圧倒的な調達力",
+    description: "1,000社以上の提携工場と義烏拠点。",
     icon: "ri-user-star-line",
   },
   {
-    title: "Modern Equipment",
-    description: "State-of-the-art fitness equipment for all your training needs",
+    title: "玩具専門ネットワーク",
+    description: "汕頭の専任スタッフが迅速に対応。",
     icon: "ri-settings-3-line",
   },
   {
-    title: "Group Classes",
-    description: "Join energizing group classes from yoga to HIIT",
+    title: "徹底した品質管理",
+    description: "QCチームによる安心の品質チェック。",
     icon: "ri-group-line",
   },
   {
-    title: "Nutrition Support",
-    description: "Get personalized nutrition plans to complement your workouts",
+    title: "物流・倉庫一体対応",
+    description: "保管・梱包・配送までワンストップ。",
     icon: "ri-restaurant-line",
   },
   {
-    title: "Community",
-    description: "Join a supportive community of fitness enthusiasts",
+    title: "安心のお取引",
+    description: "日本国内振込対応・企画から納品までサポート。",
     icon: "ri-community-line",
   },
 ];
