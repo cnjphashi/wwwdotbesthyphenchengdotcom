@@ -57,12 +57,11 @@ export const navigation = [
 ];
 
 export const relatedLinks = [
-  { name: "ホーム", href: "/" },
-  { name: "取扱商品", href: "/#products" },
-  { name: "選ばれる理由", href: "/#why-choose-us" },
-  { name: "会社概要", href: "/#company-profile" },
-  { name: "よくある質問", href: "/#faq" },
-  { name: "お問い合わせ", href: "/#contact" },
+  { name: "Sinosun Bridge", href: "https://cnjphashi.com/ja/hoomu/" },
+  { name: "Naniwacc", href: "https://cnjphashi.com/ja/jigyo-annai/accessory-zakka/" },
+  { name: "ZAKAKING", href: "https://www.zakaking.com/" },
+  { name: "Best-cheng", href: "https://www.best-cheng.com/" },
+  { name: "Coulombag", href: "https://coulombag.com/" },
 ];
 
 export const features = [
