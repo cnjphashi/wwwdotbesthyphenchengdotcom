@@ -15,7 +15,7 @@ import { siteData, navigation, socialLinks, contactInfo, relatedLinks } from '..
               href={siteData.social[social.name as keyof typeof siteData.social]}
               target="_blank"
               rel="noopener noreferrer"
-              class="w-10 h-10 bg-slate-800 hover:bg-orange-500 text-gray-400 hover:text-white rounded-lg flex items-center justify-center transition-all"
+              class="w-10 h-10 bg-slate-800 hover:bg-primary text-gray-400 hover:text-white rounded-lg flex items-center justify-center transition-all"
               aria-label={social.label}
             >
               <i class={`${social.icon} text-xl`}></i>
@@ -32,7 +32,7 @@ import { siteData, navigation, socialLinks, contactInfo, relatedLinks } from '..
             <li>
               <a
                 href={item.href}
-                class="text-gray-400 hover:text-orange-500 transition-colors"
+                class="text-gray-400 hover:text-primary transition-colors"
               >
                 {item.name}
               </a>
