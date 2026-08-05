@@ -14,6 +14,7 @@ import { facilities } from '../data/siteData';
 
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
       {facilities.map((facility) => (
+        <a href={facility.link} target="_blank">
         <div class="group bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-orange-500 transition-all transform hover:scale-105">
           <div class="relative h-64 overflow-hidden">
             <Image
@@ -33,6 +34,7 @@ import { facilities } from '../data/siteData';
             <p class="text-gray-400 leading-relaxed">{facility.description}</p>
           </div>
         </div>
+        </a>
       ))}
     </div>
   </div>
