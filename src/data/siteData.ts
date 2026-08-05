@@ -49,8 +49,8 @@ export const contactInfo = [
 
 export const navigation = [
   { name: "取扱商品", href: "/#products" },
-  { name: "選ばれる理由", href: "/#why-choose-us" },
   { name: "会社概要", href: "/#company-profile" },
+  { name: "ニュース", href: "https://cnjphashi.com/ja/nyusu/" },
   { name: "よくある質問", href: "/#faq" },
   { name: "お問い合わせ", href: "/#contact" },
 ];
