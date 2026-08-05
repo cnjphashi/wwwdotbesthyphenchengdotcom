@@ -226,14 +226,14 @@ export const facilities = [
     image: "https://cnjphashi.com/wp-content/uploads/2026/07/DIY%E7%8E%A9%E5%85%B7.webp",
   },
   {
-    title: "Strength Training",
-    description: "Comprehensive free weights and machines",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop&q=80",
+    title: "スポーツ玩具",
+    description: "Sports Toys",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E8%BF%90%E5%8A%A8%E7%8E%A9%E5%85%B7.webp",
   },
   {
-    title: "Group Class Studio",
-    description: "Spacious studio for yoga, HIIT, and more",
-    image: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&h=600&fit=crop&q=80",
+    title: "ぬいぐるみ",
+    description: "Plush Toys",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E6%AF%9B%E7%BB%92%E7%8E%A9%E5%85%B7.webp",
   },
   {
     title: "Locker Rooms",
