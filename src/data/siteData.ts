@@ -56,6 +56,15 @@ export const navigation = [
   { name: "お問い合わせ", href: "/#contact" },
 ];
 
+export const relatedLinks = [
+  { name: "ホーム", href: "/" },
+  { name: "取扱商品", href: "/#products" },
+  { name: "選ばれる理由", href: "/#why-choose-us" },
+  { name: "会社概要", href: "/#company-profile" },
+  { name: "よくある質問", href: "/#faq" },
+  { name: "お問い合わせ", href: "/#contact" },
+];
+
 export const features = [
   {
     title: "日本市場を熟知",
