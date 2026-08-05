@@ -10,7 +10,7 @@ import { navigation, siteData } from '../data/siteData';
       <div class="shrink-0 flex items-center">
         <a 
           href="/" 
-          class="text-2xl font-bold text-orange-500 font-heading tracking-tight"
+          class="text-2xl font-bold text-primary font-heading tracking-tight"
         >
           {siteData.name}
         </a>
@@ -23,7 +23,7 @@ import { navigation, siteData } from '../data/siteData';
         {navigation.map((item) => (
           <a
             href={item.href}
-            class="text-gray-300 hover:text-orange-500 transition-colors font-medium text-base py-2"
+            class="text-gray-300 hover:text-primary transition-colors font-medium text-base py-2"
           >
             {item.name}
           </a>
@@ -54,7 +54,7 @@ import { navigation, siteData } from '../data/siteData';
       {navigation.map((item) => (
         <a
           href={item.href}
-          class="block px-4 py-3 text-gray-300 hover:text-orange-500 hover:bg-slate-800 rounded-lg transition-colors font-medium"
+          class="block px-4 py-3 text-gray-300 hover:text-primary hover:bg-slate-800 rounded-lg transition-colors font-medium"
         >
           {item.name}
         </a>
