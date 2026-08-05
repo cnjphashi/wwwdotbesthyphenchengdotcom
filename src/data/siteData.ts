@@ -236,19 +236,19 @@ export const facilities = [
     image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E6%AF%9B%E7%BB%92%E7%8E%A9%E5%85%B7.webp",
   },
   {
-    title: "Locker Rooms",
-    description: "Clean, modern facilities with showers",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&q=80",
+    title: "パズル",
+    description: " Puzzles",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E6%8B%BC%E5%9B%BE.webp",
   },
   {
-    title: "Functional Training",
-    description: "TRX, battle ropes, and functional equipment",
-    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop&q=80",
+    title: "プラスチック玩具",
+    description: "Plastic Toys",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E5%A1%91%E6%96%99%E7%8E%A9%E5%85%B7.webp",
   },
   {
-    title: "Recovery Zone",
-    description: "Stretching area and foam rollers",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&q=80",
+    title: "低単価玩具",
+    description: "Low-cost Toys",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E4%BD%8E%E4%BB%B7%E7%8E%A9%E5%85%B7.webp",
   },
 ];
 
