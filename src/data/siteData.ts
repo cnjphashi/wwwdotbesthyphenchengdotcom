@@ -540,6 +540,41 @@ export const paymentOptions = {
   trial: "Free 7-day trial available for new members",
 };
 
-export const companyProfile = {
-};
+export const companyProfile = [
+  {
+    title: "会社名",
+    description: "義烏希杰趣商貿有限公司"
+  },
+  {
+    title: "英語表記",
+    description: "Yiwu CJH Trading Co., Ltd."
+  },
+  {
+    title: "創業",
+    description: "2005年12月"
+  },
+  {
+    title: "設立",
+    description: "2012年2月"
+  },
+  {
+    title: "資本金",
+    description: "500, 000人民元"
+  },
+  {
+    title: "代表",
+    description: "高剑锐"
+  },
+  {
+    title: "従業員数",
+    description: "127名（関連企業・パートを含む）"
+  },
+  {
+    title: "事業内容",
+    description: "サプライヤーチェーン(ZAKAKING SCM)システムの運営業務アマゾンＦＢＡ・楽天/RSLへの直送サポート業務<br>
+中国国内買付けアテンド、通訳などのサポート業務
+日用雑貨、服飾雑貨、玩具、バッグ、アクセサリーなどの商品提案、貿易取引
+商品の仕入れ代行(OEM/ODM/在庫品）、納品管理、検品、包装、荷物保管、輸出などサプライヤーチェーントータルサービス業務"
+  }
+];
 
