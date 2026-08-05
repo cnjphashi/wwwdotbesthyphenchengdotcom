@@ -50,7 +50,7 @@ body {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -58,9 +58,9 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-orange-500 rounded;
+  @apply bg-primary rounded;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-orange-600;
+  @apply bg-primary-hover;
 }
