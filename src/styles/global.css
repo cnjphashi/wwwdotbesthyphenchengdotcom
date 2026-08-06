@@ -13,7 +13,7 @@
 
   /* Color Theme - Background Colors */
   --color-bg-primary: #FFFFFF;
-  --color-bg-secondary: #F8F8F8;
+  --color-bg-secondary: #FBFCFC;
   --color-bg-tertiary: oklch(37.2% 0.044 257.287); /* slate-700 */
   --color-bg-card: var(--color-bg-secondary) ; /* slate-800 */
   --color-bg-card-hover: var(--color-bg-tertiary); /* slate-700 */
