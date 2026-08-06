@@ -2,8 +2,8 @@
 
 @theme {
   /* Typography - Custom Font Families */
-  --font-family-heading: "Noto Sans JP", sans-serif;
-  --font-family-body: "Noto Sans JP", sans-serif;
+  --font-family-heading: "Noto Sans JP", "Noto Sans SC", sans-serif;
+  --font-family-body: "Noto Sans JP", "Noto Sans SC", sans-serif;
 
   /* Color Theme - Primary Colors */
   --color-primary: oklch(0.638 0.237 25.44); /* #FB2C36 */
