@@ -1,3 +1,20 @@
+export const heroSlider = {
+  // 轮播图片 URL 数组
+  images: [
+    "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1920&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1920&auto=format&fit=crop",
+  ],
+  // 自动轮播间隔毫秒数（4000 = 4秒）
+  delay: 4000,
+  // 是否开启无限循环
+  loop: true,
+  // 切换动画效果: 'slide' | 'fade' | 'cube' | 'coverflow' | 'flip'
+  effect: 'fade',
+  // 切换动画过渡速度（毫秒）
+  speed: 800,
+};
+
 export const siteData = {
   name: "Hatcatoy",
   tagline: "人を惹きつける景品を、世界から。",
