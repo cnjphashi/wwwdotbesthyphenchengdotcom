@@ -17,10 +17,10 @@ const sliderConfig = heroSlider || {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<section class="relative w-full h-screen overflow-hidden bg-[#1a1a1a]">
+<section class="relative w-full h-screen overflow-hidden bg-[#1a1a1a]" style="height: 600px;">
 
   <!-- 1. 全屏图片轮播区域 -->
-  <div class="swiper hero-swiper w-full" style="height: 600px;">
+  <div class="swiper hero-swiper w-full h-full">
     <div class="swiper-wrapper">
       {sliderConfig.images.map((imgUrl, index) => (
         <div class="swiper-slide w-full h-full">
