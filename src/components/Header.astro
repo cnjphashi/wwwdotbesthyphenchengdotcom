@@ -35,7 +35,7 @@ import { navigation, siteData } from '../data/siteData';
       <!-- Mobile menu button -->
       <button
         id="mobile-menu-button"
-        class="md:hidden text-white p-2 flex items-center justify-center"
+        class="md:hidden text-text-primary p-2 flex items-center justify-center"
         aria-label="Toggle menu"
       >
         <i id="menu-icon" class="ri-menu-line text-2xl"></i>
@@ -54,7 +54,7 @@ import { navigation, siteData } from '../data/siteData';
       {navigation.map((item) => (
         <a
           href={item.href}
-          class="block px-4 py-3 text-gray-300 hover:text-primary hover:bg-slate-800 rounded-lg transition-colors font-medium"
+          class="block px-4 py-3 text-text-primary hover:text-primary hover:bg-slate-800 rounded-lg transition-colors font-medium"
         >
           {item.name}
         </a>
