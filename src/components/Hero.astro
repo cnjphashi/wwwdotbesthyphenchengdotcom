@@ -1,91 +1,205 @@
 ---
 import { Image } from 'astro:assets';
 import { siteData } from '@data/siteData';
-import HeroImage from "@assets/photo-1534438327276-14e5300c3a48.jpg"
+import HeroImage from "@assets/photo-1534438327276-14e5300c3a48.jpg";
+
+// 轮播图数据源
+const slides = [
+  {
+    id: 1,
+    yearTag: "\ 2027年ご入学向け /",
+    title: "カタログ請求\n受付中",
+    freeTag: "無料",
+    catalogImage: HeroImage, // 替换为你的目录封面图片
+    leftBoyImage: HeroImage,  // 替换为左侧小男孩图片
+    rightGirlImage: HeroImage // 替换为右侧小女孩图片
+  },
+  {
+    id: 2,
+    yearTag: "\ 2027年ご入学向け /",
+    title: "新商品ラインナップ\n公開中",
+    freeTag: "NEW",
+    catalogImage: HeroImage,
+    leftBoyImage: HeroImage,
+    rightGirlImage: HeroImage
+  },
+  {
+    id: 3,
+    yearTag: "\ 2027年ご入学向け /",
+    title: "早割キャンペーン\n実施中",
+    freeTag: "特典",
+    catalogImage: HeroImage,
+    leftBoyImage: HeroImage,
+    rightGirlImage: HeroImage
+  }
+];
 ---
 
-<section class="relative min-h-screen flex items-center justify-center bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 pt-20 overflow-hidden">
-  <!-- Background Pattern -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
-  </div>
+<!-- 引入 Swiper 样式 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <!-- Text Content -->
-      <div class="text-center lg:text-left">
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-          {siteData.tagline}
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-          {siteData.description}
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start mb-12">
-          <a
-            href="/#contact"
-            class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform inline-flex items-center justify-center gap-3"
-          >
-            お問い合わせ
-            <i class="ri-arrow-right-line"></i>
-          </a>
-          <a
-            href="/#company-profile"
-            class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-bold text-lg transition-all inline-flex items-center justify-center gap-3"
-          >
-            会社概要
-            <i class="ri-information-line"></i>
-          </a>
-        </div>
+<section class="relative w-full h-screen min-h-[600px] bg-[#FAF8F5] overflow-hidden flex flex-col justify-center">
 
-        <!-- Stats -->
-        <div class="grid grid-cols-3 gap-6 max-w-lg mx-auto lg:mx-0">
-          <div class="text-center lg:text-left">
-            <div class="text-4xl md:text-5xl font-bold text-orange-500 mb-2">500+</div>
-            <div class="text-gray-300 text-sm md:text-base">Active Members</div>
-          </div>
-          <div class="text-center lg:text-left">
-            <div class="text-4xl md:text-5xl font-bold text-orange-500 mb-2">50+</div>
-            <div class="text-gray-300 text-sm md:text-base">Expert Trainers</div>
-          </div>
-          <div class="text-center lg:text-left">
-            <div class="text-4xl md:text-5xl font-bold text-orange-500 mb-2">24/7</div>
-            <div class="text-gray-300 text-sm md:text-base">Open Access</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hero Image -->
-      <div class="hidden lg:block">
-        <div class="relative">
-          <div class="aspect-square rounded-2xl overflow-hidden bg-slate-800 border-2 border-slate-700 shadow-2xl">
-            <Image
-              src={HeroImage}
-              alt="Fitness training"
-              width={800}
-              height={800}
-              class="w-full h-full object-cover"
-              loading="eager"
-            />
-          </div>
-          <div class="absolute -bottom-6 -left-6 bg-orange-500 p-6 rounded-xl shadow-xl">
-            <div class="flex items-center gap-3">
-              <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                <i class="ri-trophy-line text-2xl text-orange-500"></i>
-              </div>
-              <div>
-                <div class="text-white font-bold text-lg">Award Winning</div>
-                <div class="text-white/80 text-sm">Best Gym 2024</div>
-              </div>
+  <!-- Swiper 容器 -->
+  <div class="swiper hero-swiper w-full h-full">
+    <div class="swiper-wrapper">
+      {slides.map((slide) => (
+        <div class="swiper-slide w-full h-full flex items-center justify-center">
+          
+          <!-- 3列主容器 (左图 - 中间内容卡片 - 右图) -->
+          <div class="w-full h-full max-w-[1400px] mx-auto grid grid-cols-12 items-center px-4 sm:px-8">
+            
+            <!-- 左侧展示图 -->
+            <div class="col-span-3 hidden md:block h-[85%] relative rounded-2xl overflow-hidden shadow-sm">
+              <Image 
+                src={slide.leftBoyImage} 
+                alt="Boy with Randoseru" 
+                class="w-full h-full object-cover object-center"
+              />
             </div>
+
+            <!-- 中间主宣传内容卡片 -->
+            <div class="col-span-12 md:col-span-6 h-[85%] bg-[#FFFDF9] mx-0 md:mx-4 rounded-2xl border border-[#F0E8DD] shadow-sm flex flex-col items-center justify-center p-6 text-center relative z-10">
+              
+              <!-- 上部卡片展示区 -->
+              <div class="relative mb-6">
+                <!-- 「無料」对话框标签 -->
+                <div class="absolute -top-4 -right-8 bg-white border border-[#D5C2B1] text-[#7A5230] text-xs px-3 py-1 rounded-full font-serif font-bold shadow-xs z-10">
+                  {slide.freeTag}
+                </div>
+                
+                <!-- 樱花小装饰 -->
+                <div class="absolute -top-2 -left-6 text-pink-300 text-xl">🌸</div>
+
+                <!-- 目录封面图容器 -->
+                <div class="w-48 sm:w-64 aspect-4/3 rounded-xl overflow-hidden border-2 border-white shadow-md bg-slate-100">
+                  <Image 
+                    src={slide.catalogImage} 
+                    alt="Catalog 2027" 
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <!-- 中间标语与标题 -->
+              <div class="space-y-3 font-serif">
+                <p class="text-[#A8382A] text-sm sm:text-base font-medium tracking-widest">
+                  {slide.yearTag}
+                </p>
+                <h2 class="text-3xl sm:text-5xl font-bold text-[#4A3525] leading-tight tracking-wider whitespace-pre-line">
+                  {slide.title}
+                </h2>
+              </div>
+
+            </div>
+
+            <!-- 右侧展示图 -->
+            <div class="col-span-3 hidden md:block h-[85%] relative rounded-2xl overflow-hidden shadow-sm">
+              <Image 
+                src={slide.rightGirlImage} 
+                alt="Girl with Randoseru" 
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+
           </div>
+
         </div>
-      </div>
+      ))}
     </div>
   </div>
 
-  <!-- Scroll Indicator -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden lg:block">
-    <i class="ri-arrow-down-line text-2xl text-white"></i>
+  <!-- 1. 左下角：控制按钮 (前进/后退/暂停) -->
+  <div class="absolute bottom-6 left-6 z-30 flex items-center gap-2">
+    <button 
+      id="btn-prev" 
+      aria-label="Previous Slide" 
+      class="w-9 h-9 rounded-full bg-black/20 hover:bg-black/40 text-white transition-all flex items-center justify-center backdrop-blur-xs"
+    >
+      <i class="ri-arrow-left-s-line text-lg"></i>
+    </button>
+    <button 
+      id="btn-toggle-play" 
+      aria-label="Play/Pause" 
+      class="w-9 h-9 rounded-full bg-black/20 hover:bg-black/40 text-white transition-all flex items-center justify-center backdrop-blur-xs"
+    >
+      <i id="play-icon" class="ri-pause-fill text-sm"></i>
+    </button>
+    <button 
+      id="btn-next" 
+      aria-label="Next Slide" 
+      class="w-9 h-9 rounded-full bg-black/20 hover:bg-black/40 text-white transition-all flex items-center justify-center backdrop-blur-xs"
+    >
+      <i class="ri-arrow-right-s-line text-lg"></i>
+    </button>
   </div>
+
+  <!-- 2. 中间：向下滑动提示 (Scroll Indicator) -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 text-center animate-bounce cursor-pointer">
+    <i class="ri-arrow-down-s-line text-2xl text-[#8C7A6B]"></i>
+  </div>
+
+  <!-- 3. 右下角：页码进度指示器 (类似于 1 / 3) -->
+  <div class="absolute bottom-6 right-6 z-30 font-serif text-sm tracking-widest text-[#6B5A4C]/80 font-medium">
+    <span id="current-slide">1</span> / <span id="total-slides">3</span>
+  </div>
+
 </section>
 
+<!-- Swiper JS & 交互初始化脚本 -->
+<script>
+  import Swiper from 'swiper';
+  import { Autoplay, Navigation } from 'swiper/modules';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    let isPlaying = true;
+
+    const swiper = new Swiper('.hero-swiper', {
+      modules: [Autoplay, Navigation],
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      on: {
+        init(s) {
+          updateFraction(s);
+        },
+        slideChange(s) {
+          updateFraction(s);
+        }
+      }
+    });
+
+    // 绑定左下角控制事件
+    document.getElementById('btn-prev')?.addEventListener('click', () => swiper.slidePrev());
+    document.getElementById('btn-next')?.addEventListener('click', () => swiper.slideNext());
+    
+    // 自动播放 / 暂停切换
+    const toggleBtn = document.getElementById('btn-toggle-play');
+    const playIcon = document.getElementById('play-icon');
+
+    toggleBtn?.addEventListener('click', () => {
+      if (isPlaying) {
+        swiper.autoplay.stop();
+        playIcon?.classList.replace('ri-pause-fill', 'ri-play-fill');
+      } else {
+        swiper.autoplay.start();
+        playIcon?.classList.replace('ri-play-fill', 'ri-pause-fill');
+      }
+      isPlaying = !isPlaying;
+    });
+
+    // 更新右下角 1 / 3 计数器
+    function updateFraction(s: Swiper) {
+      const currentEl = document.getElementById('current-slide');
+      const totalEl = document.getElementById('total-slides');
+      
+      if (currentEl && totalEl) {
+        currentEl.textContent = String(s.realIndex + 1);
+        totalEl.textContent = String(s.slides.length - (s.params.loop ? 2 : 0));
+      }
+    }
+  });
+</script>
