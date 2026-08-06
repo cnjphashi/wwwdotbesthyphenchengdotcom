@@ -32,19 +32,19 @@ const slides = [
     </div>
   </div>
 
-  <!-- 3. 左下角：前进 / 带有倒计时进度圈的暂停 / 后退 按钮 -->
+  <!-- 3. 左下角：前进 / 带有纯净倒计时进度圈的暂停 / 后退 按钮 -->
   <div class="absolute bottom-6 left-6 z-30 flex items-center gap-3">
     <!-- 上一张 -->
-    <button id="btn-prev" aria-label="Previous Slide" class="w-11 h-11 rounded-full bg-black/30 hover:bg-black/60 text-white transition-all flex items-center justify-center backdrop-blur-md border border-white/20">
+    <button id="btn-prev" aria-label="Previous Slide" class="w-11 h-11 rounded-full bg-black/40 hover:bg-black/70 text-white transition-all flex items-center justify-center backdrop-blur-md">
       <i class="ri-arrow-left-s-line text-xl"></i>
     </button>
     
-    <!-- 播放/暂停（含 SVG 进度圆环） -->
-    <button id="btn-toggle-play" aria-label="Play/Pause" class="relative w-11 h-11 rounded-full bg-black/40 hover:bg-black/70 text-white transition-all flex items-center justify-center backdrop-blur-md border border-white/20 group">
+    <!-- 播放/暂停（去除 CSS Border，仅保留单一 SVG 进度圈） -->
+    <button id="btn-toggle-play" aria-label="Play/Pause" class="relative w-11 h-11 rounded-full bg-black/40 hover:bg-black/70 text-white transition-all flex items-center justify-center backdrop-blur-md group">
       <!-- SVG 环形进度条 -->
-      <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 44 44">
-        <!-- 底圈轨道 -->
-        <circle cx="22" cy="22" r="20" stroke="currentColor" stroke-width="2" class="text-white/20 fill-none" />
+      <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none p-[1px]" viewBox="0 0 44 44">
+        <!-- 底圈轨道（代替 CSS 边框） -->
+        <circle cx="22" cy="22" r="20" stroke="currentColor" stroke-width="2" class="text-white/30 fill-none" />
         <!-- 动态进度圈 -->
         <circle 
           id="progress-circle" 
@@ -52,7 +52,7 @@ const slides = [
           cy="22" 
           r="20" 
           stroke="currentColor" 
-          stroke-width="2.5" 
+          stroke-width="2" 
           stroke-dasharray="125.6" 
           stroke-dashoffset="125.6" 
           stroke-linecap="round" 
@@ -65,7 +65,7 @@ const slides = [
     </button>
 
     <!-- 下一张 -->
-    <button id="btn-next" aria-label="Next Slide" class="w-11 h-11 rounded-full bg-black/30 hover:bg-black/60 text-white transition-all flex items-center justify-center backdrop-blur-md border border-white/20">
+    <button id="btn-next" aria-label="Next Slide" class="w-11 h-11 rounded-full bg-black/40 hover:bg-black/70 text-white transition-all flex items-center justify-center backdrop-blur-md">
       <i class="ri-arrow-right-s-line text-xl"></i>
     </button>
   </div>
@@ -83,7 +83,7 @@ const slides = [
   </div>
 
   <!-- 5. 右下角：页码指示器 (如 1 / 3) -->
-  <div class="absolute bottom-6 right-6 z-30 font-mono text-sm tracking-wider text-white/90 bg-black/30 px-4 py-2 rounded-full backdrop-blur-md border border-white/20">
+  <div class="absolute bottom-6 right-6 z-30 font-mono text-sm tracking-wider text-white/90 bg-black/40 px-4 py-2 rounded-full backdrop-blur-md">
     <span id="current-slide">1</span> / <span id="total-slides">{slides.length}</span>
   </div>
 
@@ -122,10 +122,9 @@ const slides = [
         disableOnInteraction: false,
       },
       on: {
-        // 利用 autoplayTimeLeft 计算实时进度
+        // 利用 autoplayTimeLeft 实时更新圆弧 offset
         autoplayTimeLeft(s, time, progress) {
           if (progressCircle && isPlaying) {
-            // progress 从 1 到 0 变小，我们以此计算偏移值
             const offset = circumference * progress;
             progressCircle.style.strokeDashoffset = String(offset);
           }
@@ -152,7 +151,7 @@ const slides = [
         swiper.autoplay.stop();
         playIcon?.classList.replace('ri-pause-fill', 'ri-play-fill');
         if (progressCircle) {
-          progressCircle.style.strokeDashoffset = String(circumference); // 暂停时满圈或归零
+          progressCircle.style.strokeDashoffset = String(circumference); // 暂停时清除进度弧
         }
       } else {
         swiper.autoplay.start();
