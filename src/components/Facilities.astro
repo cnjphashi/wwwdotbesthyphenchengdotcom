@@ -16,14 +16,14 @@ import { facilities } from '../data/siteData';
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
       {facilities.map((facility) => (
         <a href={facility.link} target="_blank">
-        <div class="group bg-bg-secondary border-bg-secondary rounded-xl overflow-hidden border hover:border-primary transition-all transform hover:scale-105">
+        <div class="group bg-bg-secondary border-bg-secondary rounded-xl overflow-hidden border hover:border-primary transition-all transform">
           <div class="relative h-64 overflow-hidden">
             <Image
               src={facility.image}
               alt={facility.title}
               width={800}
               height={800}
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
             />
             
