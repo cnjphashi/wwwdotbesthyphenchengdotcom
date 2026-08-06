@@ -285,7 +285,7 @@ export const facilities = [
   {
     title: "シール",
     description: " Stickers",
-    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E8%B4%B4%E7%BA%B8.webp",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/08/贴纸-分类图.webp",
     link: "https://cnjphashi.com/ja/product-category/bunbougu/shiiru/",
   },
   {
