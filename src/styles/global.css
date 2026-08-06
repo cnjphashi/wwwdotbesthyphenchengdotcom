@@ -17,6 +17,7 @@
   --color-bg-tertiary: oklch(37.2% 0.044 257.287); /* slate-700 */
   --color-bg-card: var(--color-bg-secondary) ; /* slate-800 */
   --color-bg-card-hover: var(--color-bg-tertiary); /* slate-700 */
+  --color-bg-test: #FFFFFF; 
 
   /* Color Theme - Text Colors */
   --color-text-primary: #ffffff; /* white */
