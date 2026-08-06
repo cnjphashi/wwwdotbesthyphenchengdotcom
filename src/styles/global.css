@@ -65,3 +65,18 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-primary-hover;
 }
+
+:where(#facilities, #why-choose-us, #company-profile, #news, #faq) h2{
+  position: relative;
+  isolation: isolate;
+}
+
+:where(#facilities, #why-choose-us, #company-profile, #news, #faq) h2::after{
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-primary);
+  top: 6px;
+  z-index: 1;
+}
