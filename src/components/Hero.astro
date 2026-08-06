@@ -42,30 +42,30 @@ const sliderConfig = heroSlider || {
     <button 
       id="btn-prev" 
       aria-label="Previous Slide" 
-      class="w-12 h-12 rounded-full bg-black/35 hover:bg-black/55 text-white/90 hover:text-white transition-all duration-300 flex items-center justify-center backdrop-blur-xs group"
+      class="w-12 h-12 rounded-full bg-black/35 hover:bg-black/55 text-white/90 hover:text-white transition-all duration-300 flex items-center justify-center backdrop-blur-xs group cursor-pointer"
     >
       <svg class="w-4 h-4 transition-transform group-hover:-translate-x-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
       </svg>
     </button>
     
-    <!-- 播放 / 暂停按钮（带完全贴合边缘的白色倒计时进度弧） -->
+    <!-- 播放 / 暂停按钮（带完全居中贴合按钮边缘中线的白色倒计时进度弧） -->
     <button 
       id="btn-toggle-play" 
       aria-label="Play/Pause" 
-      class="relative w-12 h-12 rounded-full bg-black/35 hover:bg-black/55 text-white/90 hover:text-white transition-all duration-300 flex items-center justify-center backdrop-blur-xs group"
+      class="relative w-12 h-12 rounded-full bg-black/35 hover:bg-black/55 text-white/90 hover:text-white transition-all duration-300 flex items-center justify-center backdrop-blur-xs group cursor-pointer"
     >
-      <!-- 精细 SVG 倒计时进度弧 -->
+      <!-- 精细 SVG 倒计时进度弧 (r=23 居中对齐 48px 外框边缘) -->
       <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 48 48">
         <circle 
           id="progress-circle" 
           cx="24" 
           cy="24" 
-          r="22.5" 
+          r="23" 
           stroke="white" 
           stroke-width="2" 
-          stroke-dasharray="141.37" 
-          stroke-dashoffset="141.37" 
+          stroke-dasharray="144.51" 
+          stroke-dashoffset="144.51" 
           stroke-linecap="round" 
           fill="none"
           class="transition-all duration-75 ease-linear opacity-90" 
@@ -84,7 +84,7 @@ const sliderConfig = heroSlider || {
     <button 
       id="btn-next" 
       aria-label="Next Slide" 
-      class="w-12 h-12 rounded-full bg-black/35 hover:bg-black/55 text-white/90 hover:text-white transition-all duration-300 flex items-center justify-center backdrop-blur-xs group"
+      class="w-12 h-12 rounded-full bg-black/35 hover:bg-black/55 text-white/90 hover:text-white transition-all duration-300 flex items-center justify-center backdrop-blur-xs group cursor-pointer"
     >
       <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -119,8 +119,6 @@ const sliderConfig = heroSlider || {
   .animate-wheel-scroll {
     animation: wheel-scroll 1.6s infinite ease-in-out;
   }
-
-  #btn-toggle-play, #btn-prev, #btn-next {cursor: pointer;}
 </style>
 
 <!-- 传递 sliderConfig 给客户端脚本 -->
@@ -128,7 +126,9 @@ const sliderConfig = heroSlider || {
   document.addEventListener('DOMContentLoaded', () => {
     let isPlaying = true;
     const progressCircle = document.getElementById('progress-circle');
-    const circumference = 2 * Math.PI * 22.5;
+    
+    // r = 23 对应的精确圆周长: 2 * π * 23 ≈ 144.513
+    const circumference = 2 * Math.PI * 23;
 
     const pauseIconSvg = `<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>`;
     const playIconSvg = `<svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>`;
@@ -136,11 +136,9 @@ const sliderConfig = heroSlider || {
     // 初始化 Swiper 动效
     const swiper = new Swiper('.hero-swiper', {
       loop: sliderConfig.loop,
-      effect: sliderConfig.effect, // 'slide'
-      speed: sliderConfig.speed,   // 推荐 900ms
+      effect: sliderConfig.effect,
+      speed: sliderConfig.speed,
       
-      // 关键：设置先快后慢的缓动曲线 (ease-out quint / expo 风格)
-      // cubic-bezier(0.16, 1, 0.3, 1) 能够带来苹果/奢华品牌官网般极具质感的快速切入、精准缓慢停靠效果
       touchEventsTarget: 'container',
       cssMode: false,
       
