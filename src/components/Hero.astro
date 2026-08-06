@@ -94,7 +94,7 @@ const sliderConfig = heroSlider || {
   </div>
 
   <!-- 3. 底部中间：精致的高级感向下滑动提示组件 -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 cursor-pointer group">
+  <div class="absolute bottom-64 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 cursor-pointer group">
     <span class="text-[10px] tracking-[0.25em] uppercase font-sans text-white/70 font-light group-hover:text-white transition-colors drop-shadow-xs">
       Scroll
     </span>
@@ -119,6 +119,8 @@ const sliderConfig = heroSlider || {
   .animate-wheel-scroll {
     animation: wheel-scroll 1.6s infinite ease-in-out;
   }
+
+  #btn-toggle-play, #btn-prev, #btn-next {cursor: pointer;}
 </style>
 
 <!-- 传递 sliderConfig 给客户端脚本 -->
