@@ -12,12 +12,11 @@
   --color-primary-dark: oklch(0.514 0.204 29.49); /* #C11007 */
 
   /* Color Theme - Background Colors */
-  --color-bg-primary: #FDFEFE; /* slate-900 */
-  --color-bg-secondary: oklch(27.9% 0.041 260.031); /* slate-800 */
+  --color-bg-primary: #FDFEFE;
+  --color-bg-secondary: #FFFFFF;
   --color-bg-tertiary: oklch(37.2% 0.044 257.287); /* slate-700 */
   --color-bg-card: var(--color-bg-secondary) ; /* slate-800 */
   --color-bg-card-hover: var(--color-bg-tertiary); /* slate-700 */
-  --color-bg-test: #FFFFFF; 
 
   /* Color Theme - Text Colors */
   --color-text-primary: #ffffff; /* white */
