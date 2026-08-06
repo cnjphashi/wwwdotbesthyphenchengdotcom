@@ -1,128 +1,146 @@
 ---
-import { Image } from 'astro:assets';
-import HeroImage1 from "@assets/photo-1534438327276-14e5300c3a48.jpg";
+// 从 siteData.ts 中解构导出 heroSlider
+import { heroSlider } from '@data/siteData';
 
-// 定义轮播图片数据
-const slides = [
-  { img: HeroImage1, alt: "Slide 1" },
-  { img: HeroImage1, alt: "Slide 2" },
-  { img: HeroImage1, alt: "Slide 3" },
-];
+const sliderConfig = heroSlider || {
+  images: [
+    "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop"
+  ],
+  delay: 4000,
+  loop: true,
+  effect: 'fade',
+  speed: 800,
+};
 ---
 
-<!-- 1. 引入 Swiper 的 CSS 与 JS -->
+<!-- 引入 Swiper 的 CSS 与 Fade 效果 CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<section class="relative w-full h-screen overflow-hidden bg-black">
+<section class="relative w-full h-screen overflow-hidden bg-[#1a1a1a]">
 
-  <!-- 2. 全屏图片轮播区域 -->
+  <!-- 1. 全屏图片轮播区域 -->
   <div class="swiper hero-swiper w-full h-full">
     <div class="swiper-wrapper">
-      {slides.map((slide) => (
+      {sliderConfig.images.map((imgUrl, index) => (
         <div class="swiper-slide w-full h-full">
-          <Image 
-            src={slide.img} 
-            alt={slide.alt} 
+          <img 
+            src={imgUrl} 
+            alt={`Hero Slide ${index + 1}`} 
             class="w-full h-full object-cover"
-            loading="eager"
+            loading={index === 0 ? "eager" : "lazy"}
           />
         </div>
       ))}
     </div>
   </div>
 
-  <!-- 3. 左下角：前进 / 带有纯净倒计时进度圈的暂停 / 后退 按钮 -->
-  <div class="absolute bottom-6 left-6 z-30 flex items-center gap-3">
-    <!-- 上一张 -->
-    <button id="btn-prev" aria-label="Previous Slide" class="w-11 h-11 rounded-full bg-black/40 hover:bg-black/70 text-white transition-all flex items-center justify-center backdrop-blur-md">
-      <i class="ri-arrow-left-s-line text-xl"></i>
+  <!-- 2. 左下角：按截图精准还原的三个圆按钮 -->
+  <div class="absolute bottom-8 left-8 z-30 flex items-center gap-3">
+    
+    <!-- 上一张按钮 -->
+    <button 
+      id="btn-prev" 
+      aria-label="Previous Slide" 
+      class="w-12 h-12 rounded-full bg-black/35 hover:bg-black/55 text-white/90 hover:text-white transition-all duration-300 flex items-center justify-center backdrop-blur-xs group"
+    >
+      <svg class="w-4 h-4 transition-transform group-hover:-translate-x-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
     </button>
     
-    <!-- 播放/暂停（去除 CSS Border，仅保留单一 SVG 进度圈） -->
-    <button id="btn-toggle-play" aria-label="Play/Pause" class="relative w-11 h-11 rounded-full bg-black/40 hover:bg-black/70 text-white transition-all flex items-center justify-center backdrop-blur-md group">
-      <!-- SVG 环形进度条 -->
-      <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none p-[1px]" viewBox="0 0 44 44">
-        <!-- 底圈轨道（代替 CSS 边框） -->
-        <circle cx="22" cy="22" r="20" stroke="currentColor" stroke-width="2" class="text-white/30 fill-none" />
-        <!-- 动态进度圈 -->
+    <!-- 播放 / 暂停按钮（带完全贴合边缘的白色倒计时进度弧） -->
+    <button 
+      id="btn-toggle-play" 
+      aria-label="Play/Pause" 
+      class="relative w-12 h-12 rounded-full bg-black/35 hover:bg-black/55 text-white/90 hover:text-white transition-all duration-300 flex items-center justify-center backdrop-blur-xs group"
+    >
+      <!-- 精细 SVG 倒计时进度弧 -->
+      <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 48 48">
         <circle 
           id="progress-circle" 
-          cx="22" 
-          cy="22" 
-          r="20" 
-          stroke="currentColor" 
+          cx="24" 
+          cy="24" 
+          r="22.5" 
+          stroke="white" 
           stroke-width="2" 
-          stroke-dasharray="125.6" 
-          stroke-dashoffset="125.6" 
+          stroke-dasharray="141.37" 
+          stroke-dashoffset="141.37" 
           stroke-linecap="round" 
-          class="text-white fill-none transition-all duration-75" 
+          fill="none"
+          class="transition-all duration-75 ease-linear opacity-90" 
         />
       </svg>
 
       <!-- 播放/暂停图标 -->
-      <i id="play-icon" class="ri-pause-fill text-base relative z-10"></i>
+      <span id="play-icon" class="flex items-center justify-center ml-0.5">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+        </svg>
+      </span>
     </button>
 
-    <!-- 下一张 -->
-    <button id="btn-next" aria-label="Next Slide" class="w-11 h-11 rounded-full bg-black/40 hover:bg-black/70 text-white transition-all flex items-center justify-center backdrop-blur-md">
-      <i class="ri-arrow-right-s-line text-xl"></i>
+    <!-- 下一张按钮 -->
+    <button 
+      id="btn-next" 
+      aria-label="Next Slide" 
+      class="w-12 h-12 rounded-full bg-black/35 hover:bg-black/55 text-white/90 hover:text-white transition-all duration-300 flex items-center justify-center backdrop-blur-xs group"
+    >
+      <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+      </svg>
     </button>
+
   </div>
 
-  <!-- 4. 底部中间：精致的高级感向下滑动提示组件 -->
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 cursor-pointer group">
-    <span class="text-[10px] tracking-[0.25em] uppercase font-sans text-white/70 font-light group-hover:text-white transition-colors drop-shadow">
+  <!-- 3. 底部中间：精致的高级感向下滑动提示组件 -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 cursor-pointer group">
+    <span class="text-[10px] tracking-[0.25em] uppercase font-sans text-white/70 font-light group-hover:text-white transition-colors drop-shadow-xs">
       Scroll
     </span>
-    <!-- 极简高定风格鼠标胶囊轮廓 -->
-    <div class="w-5 h-8 border-[1.5px] border-white/60 rounded-full flex justify-center p-1 group-hover:border-white transition-colors backdrop-blur-xs shadow-sm">
-      <!-- 滚轮滑动点 -->
+    <div class="w-5 h-8 border-[1.5px] border-white/60 rounded-full flex justify-center p-1 group-hover:border-white transition-colors backdrop-blur-2xs shadow-xs">
       <div class="w-1 h-2 bg-white rounded-full animate-wheel-scroll"></div>
     </div>
   </div>
 
-  <!-- 5. 右下角：页码指示器 (如 1 / 3) -->
-  <div class="absolute bottom-6 right-6 z-30 font-mono text-sm tracking-wider text-white/90 bg-black/40 px-4 py-2 rounded-full backdrop-blur-md">
-    <span id="current-slide">1</span> / <span id="total-slides">{slides.length}</span>
+  <!-- 4. 右下角：页码指示器 (如 1 / 3) -->
+  <div class="absolute bottom-8 right-8 z-30 font-mono text-xs tracking-widest text-white/90 bg-black/30 px-4 py-2 rounded-full backdrop-blur-xs">
+    <span id="current-slide">1</span> / <span id="total-slides">{sliderConfig.images.length}</span>
   </div>
 
 </section>
 
-<!-- 质感滚动条动画样式 -->
+<!-- Scroll 动画 -->
 <style>
   @keyframes wheel-scroll {
-    0% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(10px);
-    }
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(8px); }
   }
-
   .animate-wheel-scroll {
     animation: wheel-scroll 1.6s infinite ease-in-out;
   }
 </style>
 
-<!-- 轮播与进度条交互脚本 -->
-<script is:inline>
+<!-- 传递 sliderConfig 给客户端脚本 -->
+<script is:inline define:vars={{ sliderConfig }}>
   document.addEventListener('DOMContentLoaded', () => {
     let isPlaying = true;
     const progressCircle = document.getElementById('progress-circle');
-    const circumference = 2 * Math.PI * 20; // 2 * π * r (r=20) = ~125.6
+    const circumference = 2 * Math.PI * 22.5; // ~141.37
 
+    const pauseIconSvg = `<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>`;
+    const playIconSvg = `<svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>`;
+
+    // 读取配置并初始化 Swiper
     const swiper = new Swiper('.hero-swiper', {
-      loop: true,
-      speed: 600,
+      loop: sliderConfig.loop,
+      effect: sliderConfig.effect,
+      speed: sliderConfig.speed,
       autoplay: {
-        delay: 4000,
+        delay: sliderConfig.delay,
         disableOnInteraction: false,
       },
       on: {
-        // 利用 autoplayTimeLeft 实时更新圆弧 offset
         autoplayTimeLeft(s, time, progress) {
           if (progressCircle && isPlaying) {
             const offset = circumference * progress;
@@ -138,24 +156,22 @@ const slides = [
       }
     });
 
-    // 绑定前进/后退
+    // 绑定左右切换
     document.getElementById('btn-prev')?.addEventListener('click', () => swiper.slidePrev());
     document.getElementById('btn-next')?.addEventListener('click', () => swiper.slideNext());
     
-    // 播放 / 暂停逻辑与进度条重置
+    // 播放 / 暂停逻辑
     const toggleBtn = document.getElementById('btn-toggle-play');
-    const playIcon = document.getElementById('play-icon');
+    const playIconContainer = document.getElementById('play-icon');
 
     toggleBtn?.addEventListener('click', () => {
       if (isPlaying) {
         swiper.autoplay.stop();
-        playIcon?.classList.replace('ri-pause-fill', 'ri-play-fill');
-        if (progressCircle) {
-          progressCircle.style.strokeDashoffset = String(circumference); // 暂停时清除进度弧
-        }
+        if (playIconContainer) playIconContainer.innerHTML = playIconSvg;
+        if (progressCircle) progressCircle.style.strokeDashoffset = String(circumference);
       } else {
         swiper.autoplay.start();
-        playIcon?.classList.replace('ri-play-fill', 'ri-pause-fill');
+        if (playIconContainer) playIconContainer.innerHTML = pauseIconSvg;
       }
       isPlaying = !isPlaying;
     });
