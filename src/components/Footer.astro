@@ -1,27 +1,21 @@
 ---
-import { siteData, navigation, socialLinks, contactInfo, relatedLinks } from '../data/siteData';
+import { siteData, navigation, relatedLinks } from '../data/siteData';
 ---
 
 <footer class="bg-bg-footer border-t border-border-secondary">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      
       <!-- About Section -->
       <div>
         <h3 class="text-2xl font-bold text-primary mb-4">{siteData.name}</h3>
         <p class="text-text-tertiary mb-4">{siteData.description}</p>
-        <div class="flex space-x-4">
-          {socialLinks.map((social) => (
-            <a
-              href={siteData.social[social.name as keyof typeof siteData.social]}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="w-10 h-10 bg-bg-primary hover:bg-primary text-text-primary hover:text-white rounded-lg flex items-center justify-center transition-all"
-              aria-label={social.label}
-            >
-              <i class={`${social.icon} text-xl`}></i>
-            </a>
-          ))}
-        </div>
+
+        <!-- Copyright -->
+        <p class="text-text-primary text-sm">
+          &copy; {new Date().getFullYear()} Yiwu CJH Trading Co., Ltd.<br />
+          All rights reserved.
+        </p>
       </div>
 
       <!-- Quick Links -->
@@ -59,15 +53,15 @@ import { siteData, navigation, socialLinks, contactInfo, relatedLinks } from '..
         </ul>
       </div>
 
-      <!-- Newsletter -->
+      <!-- Logo -->
       <div>
-        <img  src="/hatcatoy-logo-800-by-800.webp" style="width: 61.8%; aspect-ratio: 1;">
+        <img
+          src="/hatcatoy-logo-800-by-800.webp"
+          style="width: 61.8%; aspect-ratio: 1;"
+          alt="Hatcatoy"
+        />
       </div>
-    </div>
 
-    <div class="border-t border-border-secondary mt-8 pt-8 text-center text-text-primary">
-      <p>&copy; {new Date().getFullYear()} Yiwu CJH Trading Co., Ltd. All rights reserved.</p>
     </div>
   </div>
 </footer>
-
