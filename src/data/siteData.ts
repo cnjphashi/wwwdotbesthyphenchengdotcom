@@ -17,7 +17,7 @@ export const heroSlider = {
 export const siteData = {
   name: "Hatcatoy",
   tagline: "人を惹きつける景品を、世界から。",
-  description: "ゲームセンター・販促を支える、魅力ある景品ソリューション。市場ニーズに応える商品企画と豊富なラインナップで、集客力向上をサポートします。",
+  description: "ゲームセンター・販促を支える、魅力ある景品ソリューション。",
   address: "浙江省義烏市北苑街景三路29号1棟3階",
   phone: "",
   email: "",
