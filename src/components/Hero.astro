@@ -126,21 +126,31 @@ const sliderConfig = heroSlider || {
   document.addEventListener('DOMContentLoaded', () => {
     let isPlaying = true;
     const progressCircle = document.getElementById('progress-circle');
-    const circumference = 2 * Math.PI * 22.5; // ~141.37
+    const circumference = 2 * Math.PI * 22.5;
 
     const pauseIconSvg = `<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>`;
     const playIconSvg = `<svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>`;
 
-    // 读取配置并初始化 Swiper
+    // 初始化 Swiper 动效
     const swiper = new Swiper('.hero-swiper', {
       loop: sliderConfig.loop,
-      effect: sliderConfig.effect,
-      speed: sliderConfig.speed,
+      effect: sliderConfig.effect, // 'slide'
+      speed: sliderConfig.speed,   // 推荐 900ms
+      
+      // 关键：设置先快后慢的缓动曲线 (ease-out quint / expo 风格)
+      // cubic-bezier(0.16, 1, 0.3, 1) 能够带来苹果/奢华品牌官网般极具质感的快速切入、精准缓慢停靠效果
+      touchEventsTarget: 'container',
+      cssMode: false,
+      
       autoplay: {
         delay: sliderConfig.delay,
         disableOnInteraction: false,
       },
       on: {
+        // 设置自定义过渡曲线
+        setTransition(s, duration) {
+          s.wrapperEl.style.transitionTimingFunction = 'cubic-bezier(0.16, 1, 0.3, 1)';
+        },
         autoplayTimeLeft(s, time, progress) {
           if (progressCircle && isPlaying) {
             const offset = circumference * progress;
@@ -156,7 +166,7 @@ const sliderConfig = heroSlider || {
       }
     });
 
-    // 绑定左右切换
+    // 绑定左右按钮
     document.getElementById('btn-prev')?.addEventListener('click', () => swiper.slidePrev());
     document.getElementById('btn-next')?.addEventListener('click', () => swiper.slideNext());
     
