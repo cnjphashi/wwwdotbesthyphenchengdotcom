@@ -65,6 +65,7 @@ export const contactInfo = [
 
 export const navigation = [
   { name: "取扱商品", href: "/#products" },
+  { name: "選ばれる理由", href: "/#why-choose-us" },
   { name: "会社概要", href: "/#company-profile" },
   { name: "ニュース", href: "/#news" },
   { name: "よくある質問", href: "/#faq" },
