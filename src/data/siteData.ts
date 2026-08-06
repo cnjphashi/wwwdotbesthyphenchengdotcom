@@ -1,8 +1,8 @@
 export const heroSlider = {
   // 轮播图片 URL 数组
   images: [
-    "/hatcatoy-slider-1.webp",
     "/hatcatoy-slider-2.webp",
+    "/hatcatoy-slider-1.webp",
   ],
   // 自动轮播间隔毫秒数（4000 = 4秒）
   delay: 4000,
