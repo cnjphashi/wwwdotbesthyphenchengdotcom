@@ -14,7 +14,7 @@ import { features } from '../data/siteData';
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {features.map((feature) => (
-        <div class="bg-bg-primary p-8 rounded-xl border border-border-white hover:border-primary transition-all transform">
+        <div class="bg-bg-primary p-8 rounded-xl border border-border-white hover:border-primary transition-all transform hover:-translate-y-[2px]">
           <div class="w-16 h-16 bg-orange-500/10 rounded-lg flex items-center justify-center mb-6">
             <i class={`${feature.icon} text-4xl text-primary`}></i>
           </div>
