@@ -10,7 +10,7 @@ export const heroSlider = {
   // 是否开启无限循环
   loop: true,
   // 切换动画效果: 'slide' | 'fade' | 'cube' | 'coverflow' | 'flip'
-  effect: 'fade',
+  effect: 'slide',
   // 切换动画过渡速度（毫秒）
   speed: 800,
 };
