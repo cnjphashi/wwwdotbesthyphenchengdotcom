@@ -25,9 +25,9 @@
   --color-text-muted: rgba(0,0,0,0.7); 
 
   /* Color Theme - Border Colors */
-  --color-border-primary: var(--color-bg-tertiary); /* slate-700 */
-  --color-border-secondary: oklch(44.6% 0.043 257.281); /* slate-600 */
-  --color-border-accent: var(--color-primary); /* orange-500 */
+  --color-border-primary: rgba(0, 0, 0, 0.08); /* slate-700 */
+  --color-border-secondary: rgba(0, 0, 0, 0.12); /* slate-600 */
+  --color-border-accent: rgba(0, 0, 0, 0.04); /* orange-500 */
 }
 
 html {
