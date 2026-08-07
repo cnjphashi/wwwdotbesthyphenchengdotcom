@@ -13,7 +13,7 @@ import { heroVideo } from '@data/siteData';
 >
 
 
-  <!-- Hero Poster Background -->
+  <!-- Hero Poster -->
 
   <img
     src={heroVideo.poster}
@@ -47,46 +47,58 @@ import { heroVideo } from '@data/siteData';
   >
 
 
-    <!-- Ripple -->
+    <!-- Outer Ripple -->
 
     <span
       class="
         absolute
+
         inset-0
 
         rounded-full
 
-        bg-primary/40
+        border
 
-        animate-ping
-      "
-    ></span>
+        border-primary/40
 
-
-    <span
-      class="
-        absolute
-        inset-0
-
-        rounded-full
-
-        bg-primary/20
-
-        animate-pulse
+        animate-video-ripple
       "
     ></span>
 
 
 
-    <!-- Button -->
+    <!-- Outer Ripple Delay -->
+
+    <span
+      class="
+        absolute
+
+        -inset-3
+
+        rounded-full
+
+        border
+
+        border-white/25
+
+        animate-video-ripple-delay
+      "
+    ></span>
+
+
+
+
+    <!-- Main Button -->
 
     <button
+
       id="open-video"
 
       aria-label="Play video"
 
       class="
         relative
+
         z-10
 
         w-24
@@ -98,23 +110,34 @@ import { heroVideo } from '@data/siteData';
 
         text-white
 
+
         flex
+
         items-center
+
         justify-center
 
-        shadow-xl
+
+        shadow-[0_10px_40px_rgba(13,19,45,0.35)]
+
 
         transition-all
+
         duration-300
 
+
         cursor-pointer
+
       "
+
     >
 
+
       <svg
+
         class="
-          w-10
-          h-10
+          w-9
+          h-9
 
           ml-1
         "
@@ -122,6 +145,7 @@ import { heroVideo } from '@data/siteData';
         viewBox="0 0 24 24"
 
         fill="currentColor"
+
       >
 
         <path d="M8 5v14l11-7z"/>
@@ -141,10 +165,12 @@ import { heroVideo } from '@data/siteData';
 
 
 
+
 <!-- Video Lightbox -->
 
 
 <div
+
   id="video-lightbox"
 
   class="
@@ -156,17 +182,22 @@ import { heroVideo } from '@data/siteData';
 
     hidden
 
+
     items-center
+
     justify-center
+
 
     bg-black/80
 
     backdrop-blur-sm
   "
+
 >
 
 
   <div
+
     class="
       relative
 
@@ -176,12 +207,16 @@ import { heroVideo } from '@data/siteData';
 
       aspect-video
     "
+
   >
 
 
-    <!-- Close -->
+
+    <!-- Close Button -->
+
 
     <button
+
       id="close-video"
 
       aria-label="Close video"
@@ -193,14 +228,18 @@ import { heroVideo } from '@data/siteData';
 
         right-0
 
+
         text-white
 
         text-4xl
 
+
         leading-none
+
 
         cursor-pointer
       "
+
     >
 
       ×
@@ -214,6 +253,7 @@ import { heroVideo } from '@data/siteData';
 
 
     <video
+
       id="video-player"
 
       class="
@@ -221,35 +261,46 @@ import { heroVideo } from '@data/siteData';
 
         h-full
 
+
         rounded-lg
 
+
         object-contain
+
 
         bg-black
       "
 
+
       poster={heroVideo.poster}
 
+
       controls
+
 
       preload="metadata"
 
     >
 
       <source
+
         src={heroVideo.src}
 
         type="video/mp4"
+
       />
 
 
     </video>
 
 
+
   </div>
 
 
 </div>
+
+
 
 
 
@@ -352,11 +403,13 @@ lightbox?.addEventListener(
   "click",
   (event)=>{
 
+
     if(event.target === lightbox){
 
       closeVideo();
 
     }
+
 
   }
 );
@@ -369,18 +422,152 @@ document.addEventListener(
   "keydown",
   (event)=>{
 
+
     if(
-      event.key === "Escape" &&
-      lightbox &&
+
+      event.key === "Escape"
+
+      &&
+
+      lightbox
+
+      &&
+
       !lightbox.classList.contains("hidden")
+
     ){
 
       closeVideo();
 
     }
 
+
   }
 );
 
 
+
 </script>
+
+
+
+
+
+
+
+<style>
+
+
+@keyframes video-ripple {
+
+
+  0% {
+
+    transform:scale(1);
+
+    opacity:.45;
+
+  }
+
+
+  70% {
+
+    transform:scale(1.45);
+
+    opacity:0;
+
+  }
+
+
+  100% {
+
+    transform:scale(1.45);
+
+    opacity:0;
+
+  }
+
+
+}
+
+
+
+
+
+@keyframes video-ripple-delay {
+
+
+  0% {
+
+    transform:scale(1);
+
+    opacity:.25;
+
+  }
+
+
+  70% {
+
+    transform:scale(1.7);
+
+    opacity:0;
+
+  }
+
+
+  100% {
+
+    transform:scale(1.7);
+
+    opacity:0;
+
+  }
+
+
+}
+
+
+
+
+
+.animate-video-ripple {
+
+  animation:
+
+    video-ripple
+
+    3s
+
+    cubic-bezier(.4,0,.2,1)
+
+    infinite;
+
+}
+
+
+
+
+
+.animate-video-ripple-delay {
+
+  animation:
+
+    video-ripple-delay
+
+    3s
+
+    cubic-bezier(.4,0,.2,1)
+
+    infinite;
+
+  
+
+  animation-delay:
+
+    .9s;
+
+}
+
+
+
+</style>
