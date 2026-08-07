@@ -564,37 +564,41 @@ export const paymentOptions = {
 export const companyProfile = [
   {
     title: "会社名",
-    description: "義烏浪速飾品有限公司"
+    description: "平湖市聚成箱包有限公司"
   },
   {
     title: "英語表記",
-    description: "Yiwu Naniwa Accessories Co., Ltd."
+    description: "Pinghu Jucheng Luggage Co., Ltd."
   },
   {
     title: "創業",
-    description: "2005年12月"
+    description: "2011年"
   },
   {
     title: "設立",
-    description: "2017年5月"
+    description: "2016年3月"
   },
   {
     title: "資本金",
-    description: "500,000人民元"
+    description: "800万元(約1億6000万円)"
   },
   {
     title: "代表",
-    description: "高剑锐"
+    description: "许宏"
   },
   {
     title: "従業員数",
-    description: "127名（関連企業・パートを含む）"
+    description: "約50名(パ-トを含む)"
+  },
+  {
+    title: "延床面積",
+    description: "約5000平米"
   },
   {
     title: "事業内容",
     description: [
-      "フアッションアクセサリ-の企画、製造及び卸、販壳",
-      "服飾、雜貨などの販壳"
+      "ランドセルをはじめとする各種バッグの企画・開発・製造",
+      "OEM・ODMによるバッグ製品の生産受託"
     ]
   }
 ];
