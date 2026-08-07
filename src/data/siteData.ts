@@ -1,22 +1,7 @@
-export const heroSlider = {
-  // 轮播图片 URL 数组
-  images: [
-    "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop",
-  ],
-  // 自动轮播间隔毫秒数（4000 = 4秒）
-  delay: 4000,
-  // 是否开启无限循环
-  loop: true,
-  // 切换动画效果: 'slide' | 'fade' | 'cube' | 'coverflow' | 'flip'
-  effect: 'slide',
-  // 切换动画过渡速度（毫秒）
-  speed: 800,
-};
 
 export const heroVideo = {
-  poster: "https://cnjphashi.com/wp-content/uploads/2026/07/cjh-img-202607021536.webp",
-  src: "https://cnjphashi.com/wp-content/uploads/2026/07/cjh-video-202607021459.mp4",
+  poster: "/cjh-img-202607021536.webp",
+  src: "/cjh-video-202607021459.mp4",
   title: "Company Introduction Video",
 };
 
