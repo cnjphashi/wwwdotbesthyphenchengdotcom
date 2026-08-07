@@ -108,16 +108,6 @@ export const features = [
     description: "生産・品質・人材管理を明確に分けた運営体制を整え、MESシステムにより生産計画から出荷までの工程を可視化・最適化しています。効率的な管理と部門連携により、高い生産性と安定した品質を実現しています。",
     icon: "ri-customer-service-2-line",
   },
-  {
-    title: "日本語対応サポート",
-    description: "日本語対応スタッフが企画から納品までスムーズにサポート。",
-    icon: "ri-truck-line",
-  },
-  {
-    title: "長期的なパートナーシップ",
-    description: "信頼と実績を基盤に、お客様のビジネス成長を支援。",
-    icon: "ri-hand-heart-line",
-  },
 ];
 
 export const classes = [
