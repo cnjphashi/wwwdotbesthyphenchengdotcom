@@ -14,6 +14,12 @@ export const heroSlider = {
   speed: 800,
 };
 
+export const heroVideo = {
+  poster: "https://cnjphashi.com/wp-content/uploads/2026/07/cjh-img-202607021536.webp",
+  src: "https://cnjphashi.com/wp-content/uploads/2026/07/cjh-video-202607021459.mp4",
+  title: "Company Introduction Video",
+};
+
 export const siteData = {
   name: "Best Cheng",
 
