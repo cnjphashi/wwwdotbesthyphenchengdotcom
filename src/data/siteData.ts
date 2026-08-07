@@ -16,11 +16,17 @@ export const heroSlider = {
 
 export const siteData = {
   name: "Best Cheng",
-  tagline: "暮らしを彩る雑貨を、世界から。",
-  description: "アクセサリー・雑貨の企画と提案で、日常に新しい価値と魅力を届けます。",
-  address: "浙江省義烏市北苑街景三路29号1棟3階",
+
+  tagline: "日本品質のランドセル・バッグを、世界へ。",
+
+  description: "ランドセルをはじめとする各種バッグの企画・開発・製造を手掛け、OEM・ODMにも対応。日本市場向けの品質基準に基づいた確かなものづくりで、ブランドの価値を形にします。",
+
+  address: "浙江省平湖市広陳鎮広中南路883号2棟3～5階",
+
   phone: "",
+
   email: "",
+
   social: {
     facebook: "https://facebook.com",
     instagram: "https://instagram.com",
@@ -64,6 +70,7 @@ export const contactInfo = [
 ];
 
 export const navigation = [
+  { name: "生産と品質管理", href: "/#qc"},
   { name: "取扱商品", href: "/#products" },
   { name: "選ばれる理由", href: "/#why-choose-us" },
   { name: "会社概要", href: "/#company-profile" },
