@@ -83,8 +83,8 @@ export const relatedLinks = [
   { name: "Sinosun Bridge", href: "https://cnjphashi.com/ja/hoomu/" },
   { name: "Hatcatoy", href: "https://www.hatcatoy.com/" },
   { name: "ZAKAKING", href: "https://www.zakaking.com/" },
+  { name: "Naniwacc", href: "https://www.naniwacc.com/" },
   { name: "Coulombag", href: "https://coulombag.com/" },
-  { name: "Best-cheng", href: "https://www.best-cheng.com/" },
 ];
 
 export const features = [
