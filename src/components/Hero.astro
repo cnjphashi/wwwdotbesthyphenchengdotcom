@@ -2,213 +2,467 @@
 import { heroVideo } from '@data/siteData';
 ---
 
-<section class="relative w-full h-screen overflow-hidden">
 
-  <!-- Hero Poster -->
+<section
+  class="
+    relative
+    w-full
+    h-screen
+    overflow-hidden
+  "
+>
+
+
+  <!-- Background Poster -->
+
   <img
     src={heroVideo.poster}
     alt={heroVideo.title}
-    class="absolute inset-0 w-full h-full object-cover"
+
+    class="
+      absolute
+      inset-0
+
+      w-full
+      h-full
+
+      object-cover
+    "
   />
 
-  <!-- Play Button Container -->
-  <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
 
-    <!-- Ambient Glow (底层柔和背景光晕) -->
-    <div class="absolute w-24 h-24 rounded-full bg-primary/40 blur-xl animate-pulse-glow"></div>
 
-    <!-- Outer Ripple 1 (首层扩散波纹) -->
-    <span class="absolute w-24 h-24 rounded-full border border-primary/60 bg-primary/20 pointer-events-none animate-ripple-1"></span>
+  <!-- Play Button -->
 
-    <!-- Outer Ripple 2 (延迟第二层扩散波纹) -->
-    <span class="absolute w-24 h-24 rounded-full border border-white/40 bg-white/10 pointer-events-none animate-ripple-2"></span>
+  <div
+    class="
+      absolute
 
-    <!-- Outer Ripple 3 (延迟第三层扩散波纹) -->
-    <span class="absolute w-24 h-24 rounded-full border border-primary/30 pointer-events-none animate-ripple-3"></span>
+      left-1/2
+      top-1/2
 
-    <!-- Main Button -->
+      -translate-x-1/2
+      -translate-y-1/2
+    "
+  >
+
+
+    <!-- Soft Glow -->
+
+    <div
+      class="
+        absolute
+
+        -inset-8
+
+        rounded-full
+
+        bg-white/10
+
+        blur-xl
+      "
+    ></div>
+
+
+
+    <!-- Outer Ring -->
+
+    <div
+      class="
+        absolute
+
+        -inset-4
+
+        rounded-full
+
+        border
+
+        border-white/40
+
+        bg-white/5
+
+        backdrop-blur-sm
+      "
+    ></div>
+
+
+
+    <!-- Main Play Button -->
+
     <button
+
       id="open-video"
+
       aria-label="Play video"
+
+
       class="
         relative
+
         z-10
+
+
         w-24
         h-24
+
+
         rounded-full
+
+
         bg-primary
+
+
         text-white
+
+
         flex
+
         items-center
+
         justify-center
-        shadow-[0_10px_40px_rgba(0,0,0,0.4)]
-        hover:scale-110
-        active:scale-95
-        transition-all
+
+
+
+        shadow-[0_8px_30px_rgba(13,19,45,0.45)]
+
+
+        transition-opacity
+
         duration-300
+
+
+        hover:opacity-90
+
+
         cursor-pointer
-        group
       "
+
     >
+
+
       <svg
-        class="w-9 h-9 ml-1 transition-transform duration-300 group-hover:scale-110"
+
+        class="
+          w-9
+          h-9
+
+          ml-1
+        "
+
         viewBox="0 0 24 24"
+
         fill="currentColor"
+
       >
+
         <path d="M8 5v14l11-7z"/>
+
       </svg>
+
+
     </button>
 
+
   </div>
+
 
 </section>
 
 
+
+
+
+
 <!-- Video Lightbox -->
+
+
 <div
+
   id="video-lightbox"
+
+
   class="
     fixed
+
     inset-0
+
     z-[999]
+
+
     hidden
+
+
     items-center
+
     justify-center
+
+
+
     bg-black/80
+
+
     backdrop-blur-sm
   "
->
-  <div class="relative w-[90%] max-w-6xl aspect-video">
 
-    <!-- Close Button -->
+>
+
+
+  <div
+
+    class="
+      relative
+
+
+      w-[90%]
+
+
+      max-w-6xl
+
+
+      aspect-video
+    "
+
+  >
+
+
+
+    <!-- Close -->
+
     <button
+
       id="close-video"
+
+
       aria-label="Close video"
+
+
       class="
         absolute
+
+
         -top-12
+
+
         right-0
+
+
         text-white
+
+
         text-4xl
+
+
         leading-none
+
+
         cursor-pointer
-        hover:opacity-75
-        transition-opacity
       "
+
     >
+
       ×
+
     </button>
 
+
+
+
     <!-- Video -->
+
     <video
+
       id="video-player"
+
+
       class="
         w-full
+
         h-full
+
+
         rounded-lg
+
+
         object-contain
+
+
         bg-black
       "
+
+
       poster={heroVideo.poster}
+
+
       controls
+
+
       preload="metadata"
+
     >
+
       <source
+
         src={heroVideo.src}
+
+
         type="video/mp4"
+
       />
+
+
     </video>
 
+
+
   </div>
+
+
 </div>
 
 
+
+
+
+
+
 <script>
-const openButton = document.getElementById("open-video");
-const closeButton = document.getElementById("close-video");
-const lightbox = document.getElementById("video-lightbox");
-const video = document.getElementById("video-player");
+
+
+const openButton =
+  document.getElementById(
+    "open-video"
+  );
+
+
+const closeButton =
+  document.getElementById(
+    "close-video"
+  );
+
+
+const lightbox =
+  document.getElementById(
+    "video-lightbox"
+  );
+
+
+const video =
+  document.getElementById(
+    "video-player"
+  );
+
+
+
+
 
 function openVideo(){
-  lightbox?.classList.remove("hidden");
-  lightbox?.classList.add("flex");
+
+  lightbox?.classList.remove(
+    "hidden"
+  );
+
+
+  lightbox?.classList.add(
+    "flex"
+  );
+
+
   video?.play();
+
 }
+
+
+
+
 
 function closeVideo(){
-  lightbox?.classList.add("hidden");
-  lightbox?.classList.remove("flex");
+
+  lightbox?.classList.add(
+    "hidden"
+  );
+
+
+  lightbox?.classList.remove(
+    "flex"
+  );
+
+
   video?.pause();
+
+
   if(video){
+
     video.currentTime = 0;
+
   }
+
 }
 
-openButton?.addEventListener("click", openVideo);
-closeButton?.addEventListener("click", closeVideo);
 
-lightbox?.addEventListener("click", (event)=>{
-  if(event.target === lightbox){
-    closeVideo();
-  }
-});
 
-document.addEventListener("keydown", (event)=>{
-  if(
-    event.key === "Escape" &&
-    lightbox &&
-    !lightbox.classList.contains("hidden")
-  ){
-    closeVideo();
+
+
+openButton?.addEventListener(
+  "click",
+  openVideo
+);
+
+
+
+closeButton?.addEventListener(
+  "click",
+  closeVideo
+);
+
+
+
+
+
+lightbox?.addEventListener(
+  "click",
+  (event)=>{
+
+
+    if(event.target === lightbox){
+
+      closeVideo();
+
+    }
+
+
   }
-});
+);
+
+
+
+
+
+document.addEventListener(
+  "keydown",
+  (event)=>{
+
+
+    if(
+
+      event.key === "Escape"
+
+      &&
+
+      lightbox
+
+      &&
+
+      !lightbox.classList.contains("hidden")
+
+    ){
+
+      closeVideo();
+
+    }
+
+
+  }
+);
+
+
 </script>
-
-
-<style>
-/* 核心动画优化：平滑缩放与渐隐，搭配缓动函数 */
-
-@keyframes fluid-ripple {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 0.4;
-  }
-  100% {
-    transform: scale(2.2);
-    opacity: 0;
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.4;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 0.7;
-  }
-}
-
-/* 动画类引入 */
-.animate-ripple-1 {
-  animation: fluid-ripple 2.6s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
-}
-
-.animate-ripple-2 {
-  animation: fluid-ripple 2.6s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
-  animation-delay: 0.8s;
-}
-
-.animate-ripple-3 {
-  animation: fluid-ripple 2.6s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
-  animation-delay: 1.6s;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-</style>
