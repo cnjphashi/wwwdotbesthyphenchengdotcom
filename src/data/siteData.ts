@@ -583,7 +583,7 @@ export const companyProfile = [
     title: "事業内容",
     description: [
       "フアッションアクセサリ-の企画、製造及び卸、販壳",
-      "服飾、雜貨などの販壳",
+      "服飾、雜貨などの販壳"
     ]
   }
 ];
