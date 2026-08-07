@@ -1,189 +1,336 @@
 ---
-// 从 siteData.ts 中解构导出 heroSlider
-import { heroSlider } from '@data/siteData';
+import { heroSlider, heroVideo } from '@data/siteData';
 
-const sliderConfig = heroSlider || {
-  images: [
-    "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop"
-  ],
-  delay: 4000,
-  loop: true,
-  effect: 'fade',
-  speed: 800,
-};
+const hero = heroSlider[0];
 ---
 
-<!-- 引入 Swiper 的 CSS 与 Fade 效果 CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<section
+  class="
+    relative
+    w-full
+    h-screen
+    overflow-hidden
+  "
+>
 
-<section class="relative w-full h-screen overflow-hidden bg-[#1a1a1a]" style="padding-top: 81px;">
+  <!-- Hero Background -->
+  <img
+    src={hero.image}
+    alt={hero.title}
+    class="
+      absolute
+      inset-0
 
-  <!-- 1. 全屏图片轮播区域 -->
-  <div class="swiper hero-swiper w-full h-full">
-    <div class="swiper-wrapper">
-      {sliderConfig.images.map((imgUrl, index) => (
-        <div class="swiper-slide w-full h-full">
-          <img 
-            src={imgUrl} 
-            alt={`Hero Slide ${index + 1}`} 
-            class="w-full h-full object-cover object-center"
-            loading={index === 0 ? "eager" : "lazy"}
-          />
-        </div>
-      ))}
-    </div>
-  </div>
+      w-full
+      h-full
 
-  <!-- 2. 左下角：按截图精准还原的三个圆按钮 -->
-  <div class="absolute bottom-8 left-8 z-30 flex items-center gap-3">
-    
-    <!-- 上一张按钮 -->
-    <button 
-      id="btn-prev" 
-      aria-label="Previous Slide" 
-      class="w-12 h-12 rounded-full bg-black/35 hover:bg-black/55 text-white/90 hover:text-white transition-all duration-300 flex items-center justify-center backdrop-blur-xs group cursor-pointer"
+      object-cover
+    "
+  />
+
+
+  <!-- Overlay -->
+  <div
+    class="
+      absolute
+      inset-0
+
+      bg-black/25
+    "
+  ></div>
+
+
+
+  <!-- Play Button -->
+  <button
+    id="open-video"
+    aria-label="Play company video"
+
+    class="
+      absolute
+
+      left-1/2
+      top-1/2
+
+      -translate-x-1/2
+      -translate-y-1/2
+
+
+      w-24
+      h-24
+
+      rounded-full
+
+      bg-primary
+
+      text-white
+
+      flex
+      items-center
+      justify-center
+
+
+      shadow-xl
+
+
+      transition-all
+      duration-300
+
+      hover:scale-110
+
+      cursor-pointer
+    "
+  >
+
+    <svg
+      class="
+        w-10
+        h-10
+
+        ml-1
+      "
+      viewBox="0 0 24 24"
+      fill="currentColor"
     >
-      <svg class="w-4 h-4 transition-transform group-hover:-translate-x-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-      </svg>
-    </button>
-    
-    <!-- 播放 / 暂停按钮（带完全居中贴合按钮边缘中线的白色倒计时进度弧） -->
-    <button 
-      id="btn-toggle-play" 
-      aria-label="Play/Pause" 
-      class="relative w-12 h-12 rounded-full bg-black/35 hover:bg-black/55 text-white/90 hover:text-white transition-all duration-300 flex items-center justify-center backdrop-blur-xs group cursor-pointer"
-    >
-      <!-- 精细 SVG 倒计时进度弧 (r=23 居中对齐 48px 外框边缘) -->
-      <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 48 48">
-        <circle 
-          id="progress-circle" 
-          cx="24" 
-          cy="24" 
-          r="23" 
-          stroke="white" 
-          stroke-width="2" 
-          stroke-dasharray="144.51" 
-          stroke-dashoffset="144.51" 
-          stroke-linecap="round" 
-          fill="none"
-          class="transition-all duration-75 ease-linear opacity-90" 
-        />
-      </svg>
+      <path d="M8 5v14l11-7z"/>
+    </svg>
 
-      <!-- 播放/暂停图标 -->
-      <span id="play-icon" class="flex items-center justify-center ml-0.5">
-        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-        </svg>
-      </span>
-    </button>
 
-    <!-- 下一张按钮 -->
-    <button 
-      id="btn-next" 
-      aria-label="Next Slide" 
-      class="w-12 h-12 rounded-full bg-black/35 hover:bg-black/55 text-white/90 hover:text-white transition-all duration-300 flex items-center justify-center backdrop-blur-xs group cursor-pointer"
-    >
-      <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-      </svg>
-    </button>
+  </button>
 
-  </div>
-
-  <!-- 3. 底部中间：精致的高级感向下滑动提示组件 -->
-  <div class="absolute bottom-32 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 cursor-pointer group">
-    <span class="text-[10px] tracking-[0.25em] uppercase font-sans text-white/70 font-light group-hover:text-white transition-colors drop-shadow-xs">
-      Scroll
-    </span>
-    <div class="w-5 h-8 border-[1.5px] border-white/60 rounded-full flex justify-center p-1 group-hover:border-white transition-colors backdrop-blur-2xs shadow-xs">
-      <div class="w-1 h-2 bg-white rounded-full animate-wheel-scroll"></div>
-    </div>
-  </div>
-
-  <!-- 4. 右下角：页码指示器 (如 1 / 3) -->
-  <div class="absolute bottom-8 right-8 z-30 font-mono text-xs tracking-widest text-white/90 bg-black/30 px-4 py-2 rounded-full backdrop-blur-xs">
-    <span id="current-slide">1</span> / <span id="total-slides">{sliderConfig.images.length}</span>
-  </div>
 
 </section>
 
-<!-- Scroll 动画 -->
-<style>
-  @keyframes wheel-scroll {
-    0% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(8px); }
+
+
+
+
+<!-- Video Lightbox -->
+
+<div
+  id="video-lightbox"
+
+  class="
+    fixed
+
+    inset-0
+
+    z-[999]
+
+    hidden
+
+    items-center
+    justify-center
+
+    bg-black/80
+
+    backdrop-blur-sm
+  "
+>
+
+
+  <div
+    class="
+      relative
+
+      w-[90%]
+
+      max-w-6xl
+
+      aspect-video
+    "
+  >
+
+
+    <!-- Close Button -->
+    <button
+      id="close-video"
+
+      aria-label="Close video"
+
+      class="
+        absolute
+
+        -top-12
+
+        right-0
+
+        text-white
+
+        text-4xl
+
+        leading-none
+
+        cursor-pointer
+      "
+    >
+      ×
+    </button>
+
+
+
+    <!-- Video -->
+
+    <video
+
+      id="video-player"
+
+      class="
+        w-full
+
+        h-full
+
+        rounded-lg
+
+        object-contain
+
+        bg-black
+      "
+
+      poster={heroVideo.poster}
+
+      controls
+
+      preload="metadata"
+
+    >
+
+      <source
+        src={heroVideo.src}
+        type="video/mp4"
+      />
+
+    </video>
+
+
+  </div>
+
+
+</div>
+
+
+
+
+
+<script>
+
+const openButton =
+document.getElementById(
+  "open-video"
+);
+
+
+const closeButton =
+document.getElementById(
+  "close-video"
+);
+
+
+const lightbox =
+document.getElementById(
+  "video-lightbox"
+);
+
+
+const video =
+document.getElementById(
+  "video-player"
+);
+
+
+
+
+
+function openVideo(){
+
+  lightbox?.classList.remove(
+    "hidden"
+  );
+
+  lightbox?.classList.add(
+    "flex"
+  );
+
+
+  video?.play();
+
+}
+
+
+
+
+function closeVideo(){
+
+  lightbox?.classList.add(
+    "hidden"
+  );
+
+  lightbox?.classList.remove(
+    "flex"
+  );
+
+
+  video?.pause();
+
+
+  if(video){
+    video.currentTime = 0;
   }
-  .animate-wheel-scroll {
-    animation: wheel-scroll 1.6s infinite ease-in-out;
+
+}
+
+
+
+
+
+openButton?.addEventListener(
+  "click",
+  openVideo
+);
+
+
+
+closeButton?.addEventListener(
+  "click",
+  closeVideo
+);
+
+
+
+
+
+lightbox?.addEventListener(
+  "click",
+  (event)=>{
+
+    if(event.target === lightbox){
+
+      closeVideo();
+
+    }
+
   }
-</style>
+);
 
-<!-- 传递 sliderConfig 给客户端脚本 -->
-<script is:inline define:vars={{ sliderConfig }}>
-  document.addEventListener('DOMContentLoaded', () => {
-    let isPlaying = true;
-    const progressCircle = document.getElementById('progress-circle');
-    
-    // r = 23 对应的精确圆周长: 2 * π * 23 ≈ 144.513
-    const circumference = 2 * Math.PI * 23;
 
-    const pauseIconSvg = `<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>`;
-    const playIconSvg = `<svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>`;
 
-    // 初始化 Swiper 动效
-    const swiper = new Swiper('.hero-swiper', {
-      loop: sliderConfig.loop,
-      effect: sliderConfig.effect,
-      speed: sliderConfig.speed,
-      
-      touchEventsTarget: 'container',
-      cssMode: false,
-      
-      autoplay: {
-        delay: sliderConfig.delay,
-        disableOnInteraction: false,
-      },
-      on: {
-        // 设置自定义过渡曲线
-        setTransition(s, duration) {
-          s.wrapperEl.style.transitionTimingFunction = 'cubic-bezier(0.16, 1, 0.3, 1)';
-        },
-        autoplayTimeLeft(s, time, progress) {
-          if (progressCircle && isPlaying) {
-            const offset = circumference * progress;
-            progressCircle.style.strokeDashoffset = String(offset);
-          }
-        },
-        slideChange(s) {
-          const currentEl = document.getElementById('current-slide');
-          if (currentEl) {
-            currentEl.textContent = String(s.realIndex + 1);
-          }
-        }
-      }
-    });
 
-    // 绑定左右按钮
-    document.getElementById('btn-prev')?.addEventListener('click', () => swiper.slidePrev());
-    document.getElementById('btn-next')?.addEventListener('click', () => swiper.slideNext());
-    
-    // 播放 / 暂停逻辑
-    const toggleBtn = document.getElementById('btn-toggle-play');
-    const playIconContainer = document.getElementById('play-icon');
 
-    toggleBtn?.addEventListener('click', () => {
-      if (isPlaying) {
-        swiper.autoplay.stop();
-        if (playIconContainer) playIconContainer.innerHTML = playIconSvg;
-        if (progressCircle) progressCircle.style.strokeDashoffset = String(circumference);
-      } else {
-        swiper.autoplay.start();
-        if (playIconContainer) playIconContainer.innerHTML = pauseIconSvg;
-      }
-      isPlaying = !isPlaying;
-    });
-  });
+document.addEventListener(
+  "keydown",
+  (event)=>{
+
+    if(
+      event.key === "Escape" &&
+      !lightbox?.classList.contains("hidden")
+    ){
+
+      closeVideo();
+
+    }
+
+  }
+);
+
+
 </script>
