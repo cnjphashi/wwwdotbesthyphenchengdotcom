@@ -91,22 +91,22 @@ export const features = [
   {
     title: "日本向け輸出に特化",
     description: "弊社は設立以来、ランドセルを中心に日本市場向け製品の製造・輸出に取り組んでまいりました。日本の品質基準や市場ニーズを熟知し、細部までこだわった製品づくりで、多くのお取引先様から信頼をいただいております。",
-    icon: "ri-user-star-line",
+    icon: "ri-global-line",
   },
   {
     title: "豊富な歴史と経験",
     description: "10年近くの製造経験を通じて、ランドセルをはじめとする各種バッグを数多く手がけてきました。長年の実績に基づいたノウハウを活かし、安定した品質と対応力を誇ります。",
-    icon: "ri-shopping-bag-line",
+    icon: "ri-briefcase-4-line",
   },
   {
     title: "小ロット対応可能",
     description: "大量生産から小ロット・サンプル対応まで柔軟に承っております。お客様のご要望に合わせたカスタマイズや短納期にも対応可能です。",
-    icon: "ri-shield-check-line",
+    icon: "ri-tools-line",
   },
   {
     title: "科学的かつ効率的な管理体制",
     description: "生産・品質・人材管理を明確に分けた運営体制を整え、MESシステムにより生産計画から出荷までの工程を可視化・最適化しています。効率的な管理と部門連携により、高い生産性と安定した品質を実現しています。",
-    icon: "ri-customer-service-2-line",
+    icon: "ri-settings-3-line",
   },
 ];
 
