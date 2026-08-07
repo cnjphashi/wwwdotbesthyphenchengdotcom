@@ -31,26 +31,10 @@ import { heroVideo } from '@data/siteData';
   />
 
 
-  <!-- Overlay -->
-
-  <div
-    class="
-      absolute
-      inset-0
-
-      bg-black/30
-    "
-  ></div>
-
-
 
   <!-- Play Button -->
 
-  <button
-    id="open-video"
-
-    aria-label="Play video"
-
+  <div
     class="
       absolute
 
@@ -59,58 +43,96 @@ import { heroVideo } from '@data/siteData';
 
       -translate-x-1/2
       -translate-y-1/2
-
-
-      w-24
-      h-24
-
-      rounded-full
-
-
-      bg-primary
-
-      text-white
-
-
-      flex
-      items-center
-      justify-center
-
-
-      shadow-xl
-
-
-      transition-all
-      duration-300
-
-
-      hover:scale-110
-
-
-      cursor-pointer
     "
   >
 
 
-    <svg
+    <!-- Ripple -->
+
+    <span
       class="
-        w-10
-        h-10
+        absolute
+        inset-0
 
-        ml-1
+        rounded-full
+
+        bg-primary/40
+
+        animate-ping
       "
+    ></span>
 
-      viewBox="0 0 24 24"
 
-      fill="currentColor"
+    <span
+      class="
+        absolute
+        inset-0
+
+        rounded-full
+
+        bg-primary/20
+
+        animate-pulse
+      "
+    ></span>
+
+
+
+    <!-- Button -->
+
+    <button
+      id="open-video"
+
+      aria-label="Play video"
+
+      class="
+        relative
+        z-10
+
+        w-24
+        h-24
+
+        rounded-full
+
+        bg-primary
+
+        text-white
+
+        flex
+        items-center
+        justify-center
+
+        shadow-xl
+
+        transition-all
+        duration-300
+
+        cursor-pointer
+      "
     >
 
-      <path d="M8 5v14l11-7z"/>
+      <svg
+        class="
+          w-10
+          h-10
 
-    </svg>
+          ml-1
+        "
+
+        viewBox="0 0 24 24"
+
+        fill="currentColor"
+      >
+
+        <path d="M8 5v14l11-7z"/>
+
+      </svg>
 
 
-  </button>
+    </button>
+
+
+  </div>
 
 
 </section>
@@ -121,8 +143,8 @@ import { heroVideo } from '@data/siteData';
 
 <!-- Video Lightbox -->
 
-<div
 
+<div
   id="video-lightbox"
 
   class="
@@ -137,17 +159,14 @@ import { heroVideo } from '@data/siteData';
     items-center
     justify-center
 
-
     bg-black/80
 
     backdrop-blur-sm
   "
-
 >
 
 
   <div
-
     class="
       relative
 
@@ -157,15 +176,12 @@ import { heroVideo } from '@data/siteData';
 
       aspect-video
     "
-
   >
 
 
-    <!-- Close Button -->
-
+    <!-- Close -->
 
     <button
-
       id="close-video"
 
       aria-label="Close video"
@@ -177,17 +193,14 @@ import { heroVideo } from '@data/siteData';
 
         right-0
 
-
         text-white
 
         text-4xl
 
         leading-none
 
-
         cursor-pointer
       "
-
     >
 
       ×
@@ -196,51 +209,41 @@ import { heroVideo } from '@data/siteData';
 
 
 
-    <!-- Video Player -->
+
+    <!-- Video -->
 
 
     <video
-
       id="video-player"
-
 
       class="
         w-full
 
         h-full
 
-
         rounded-lg
 
-
         object-contain
-
 
         bg-black
       "
 
-
       poster={heroVideo.poster}
 
-
       controls
-
 
       preload="metadata"
 
     >
 
       <source
-
         src={heroVideo.src}
 
         type="video/mp4"
-
       />
 
 
     </video>
-
 
 
   </div>
@@ -301,6 +304,7 @@ function openVideo(){
 
 
 
+
 function closeVideo(){
 
   lightbox?.classList.add(
@@ -348,13 +352,11 @@ lightbox?.addEventListener(
   "click",
   (event)=>{
 
-
     if(event.target === lightbox){
 
       closeVideo();
 
     }
-
 
   }
 );
@@ -367,7 +369,6 @@ document.addEventListener(
   "keydown",
   (event)=>{
 
-
     if(
       event.key === "Escape" &&
       lightbox &&
@@ -377,7 +378,6 @@ document.addEventListener(
       closeVideo();
 
     }
-
 
   }
 );
