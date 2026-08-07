@@ -6,8 +6,8 @@
   --font-family-body: "Noto Sans JP", "Noto Sans SC", sans-serif;
 
   /* Color Theme - Primary Colors */
-  --color-primary: oklch(0.638 0.237 25.44); /* #FB2C36 */
-  --color-primary-hover: oklch(0.589 0.233 29.63); /* #E7180B */
+  --color-primary: #D0872E;
+  --color-primary-hover: #F0B13B;
   --color-primary-light: oklch(0.702 0.189 22.23); /* #FF6467 */
   --color-primary-dark: oklch(0.514 0.204 29.49); /* #C11007 */
 
