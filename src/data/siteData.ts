@@ -15,7 +15,7 @@ export const heroSlider = {
 };
 
 export const siteData = {
-  name: "Naniwacc",
+  name: "Best Cheng",
   tagline: "暮らしを彩る雑貨を、世界から。",
   description: "アクセサリー・雑貨の企画と提案で、日常に新しい価値と魅力を届けます。",
   address: "浙江省義烏市北苑街景三路29号1棟3階",
