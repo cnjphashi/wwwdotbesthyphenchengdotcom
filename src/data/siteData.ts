@@ -557,7 +557,7 @@ export const companyProfile = [
   },
   {
     title: "英語表記",
-    description: "Yiwu Naniwa Accessories Co., Ltd.
+    description: "Yiwu Naniwa Accessories Co., Ltd."
   },
   {
     title: "創業",
