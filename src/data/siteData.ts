@@ -15,9 +15,9 @@ export const heroSlider = {
 };
 
 export const siteData = {
-  name: "Hatcatoy",
-  tagline: "人を惹きつける景品を、世界から。",
-  description: "ゲームセンター・販促を支える、魅力ある景品ソリューション。",
+  name: "Naniwacc",
+  tagline: "暮らしを彩る雑貨を、世界から。",
+  description: "アクセサリー・雑貨の企画と提案で、日常に新しい価値と魅力を届けます。",
   address: "浙江省義烏市北苑街景三路29号1棟3階",
   phone: "",
   email: "",
@@ -74,8 +74,8 @@ export const navigation = [
 
 export const relatedLinks = [
   { name: "Sinosun Bridge", href: "https://cnjphashi.com/ja/hoomu/" },
+  { name: "Hatcatoy", href: "https://www.hatcatoy.com/" },
   { name: "ZAKAKING", href: "https://www.zakaking.com/" },
-  { name: "Naniwacc", href: "https://www.naniwacc.com/" },
   { name: "Coulombag", href: "https://coulombag.com/" },
   { name: "Best-cheng", href: "https://www.best-cheng.com/" },
 ];
@@ -83,33 +83,33 @@ export const relatedLinks = [
 export const features = [
   {
     title: "日本市場を熟知",
-    description: "日本の商習慣・品質基準を理解した提案力。",
-    icon: "ri-time-line",
-  },
-  {
-    title: "圧倒的な調達力",
-    description: "1,000社以上の提携工場と義烏拠点。",
+    description: "20年近くの輸出経験を活かし、日本向けの商品提案と対応を実現。",
     icon: "ri-user-star-line",
   },
   {
-    title: "玩具専門ネットワーク",
-    description: "汕頭の専任スタッフが迅速に対応。",
-    icon: "ri-settings-3-line",
+    title: "豊富な商品調達力",
+    description: "義烏を中心とした幅広いネットワークで、多様な商品ニーズに対応。",
+    icon: "ri-shopping-bag-line",
   },
   {
-    title: "徹底した品質管理",
-    description: "QCチームによる安心の品質チェック。",
-    icon: "ri-group-line",
+    title: "専門チームによる品質管理",
+    description: "経験豊富なスタッフによる検品・品質チェックで安心を提供。",
+    icon: "ri-shield-check-line",
   },
   {
-    title: "物流・倉庫一体対応",
-    description: "保管・梱包・配送までワンストップ。",
-    icon: "ri-restaurant-line",
+    title: "日本語対応サポート",
+    description: "日本語対応スタッフが企画から納品までスムーズにサポート。",
+    icon: "ri-customer-service-2-line",
   },
   {
-    title: "安心のお取引",
-    description: "日本国内振込対応・企画から納品までサポート。",
-    icon: "ri-community-line",
+    title: "一貫した物流サービス",
+    description: "仕入れ・検品・梱包・出荷までワンストップで対応。",
+    icon: "ri-truck-line",
+  },
+  {
+    title: "長期的なパートナーシップ",
+    description: "信頼と実績を基盤に、お客様のビジネス成長を支援。",
+    icon: "ri-hand-heart-line",
   },
 ];
 
@@ -246,90 +246,84 @@ export const testimonials = [
 
 export const facilities = [
   {
-    title: "DIY",
-    description: "DIY Toys",
-    image: "https://cnjphashi.com/wp-content/uploads/2026/07/DIY%E7%8E%A9%E5%85%B7.webp",
-    link: "https://cnjphashi.com/ja/product-category/omocha/diy/",
+    title: "イヤリング、ピアス",
+    description: "",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E8%80%B3%E7%8E%AF.webp",
+    link: "https://cnjphashi.com/ja/product-category/akusesarii/iyaringu-piasu/",
   },
   {
-    title: "スポーツ玩具",
-    description: "Sports Toys",
-    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E8%BF%90%E5%8A%A8%E7%8E%A9%E5%85%B7.webp",
-    link: "https://cnjphashi.com/ja/product-category/omocha/supootsu/",
+    title: "カチューシャ",
+    description: "",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E5%8F%91%E7%AE%8D.webp",
+    link: "https://cnjphashi.com/ja/product-category/akusesarii/kachuusha/",
   },
   {
-    title: "ぬいぐるみ",
-    description: "Plush Toys",
-    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E6%AF%9B%E7%BB%92%E7%8E%A9%E5%85%B7.webp",
-    link: "https://cnjphashi.com/ja/product-category/omocha/nuigurumi/",
+    title: "シュシュ",
+    description: "",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E5%8F%91%E5%9C%88.webp",
+    link: "https://cnjphashi.com/ja/product-category/akusesarii/shushu/",
   },
   {
-    title: "パズル",
-    description: " Puzzles",
-    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E6%8B%BC%E5%9B%BE.webp",
-    link: "https://cnjphashi.com/ja/product-category/omocha/pazuru/",
+    title: "ネイルシール",
+    description: "",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E7%BE%8E%E7%94%B2%E8%B4%B4.webp",
+    link: "https://cnjphashi.com/ja/product-category/akusesarii/neiru-shiiru/",
   },
   {
-    title: "プラスチック玩具",
-    description: "Plastic Toys",
-    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E5%A1%91%E6%96%99%E7%8E%A9%E5%85%B7.webp",
-    link: "https://cnjphashi.com/ja/product-category/omocha/purasuchikku-omocha/",
+    title: "ネックレス",
+    description: "",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E9%A1%B9%E9%93%BE.webp",
+    link: "https://cnjphashi.com/ja/product-category/akusesarii/nekkuresu/",
   },
   {
-    title: "低単価玩具",
-    description: "Low-cost Toys",
-    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E4%BD%8E%E4%BB%B7%E7%8E%A9%E5%85%B7.webp",
-    link: "https://cnjphashi.com/ja/product-category/omocha/teitanka-omocha/",
+    title: "ブレスレット",
+    description: "",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E6%89%8B%E9%93%BE.webp",
+    link: "https://cnjphashi.com/ja/product-category/akusesarii/buresuretto/",
   },
   {
-    title: "光るおもちゃ",
-    description: "Light-Up Toys",
-    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E5%8F%91%E5%85%89%E7%8E%A9%E5%85%B7.webp",
-    link: "https://cnjphashi.com/ja/product-category/omocha/hikaru-omocha/",
+    title: "ブローチ",
+    description: "",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E8%83%B8%E9%92%88.webp",
+    link: "https://cnjphashi.com/ja/product-category/akusesarii/buroochi/",
   },
   {
-    title: "木製おもちゃ",
-    description: "Wooden Toys",
-    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E6%9C%A8%E5%88%B6%E7%8E%A9%E5%85%B7.webp",
-    link: "https://cnjphashi.com/ja/product-category/omocha/mokusei-omocha/",
+    title: "ヘアクリップ",
+    description: "",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E5%8F%91%E5%A4%B9.webp",
+    link: "https://cnjphashi.com/ja/product-category/akusesarii/hea-kurippu/",
   },
   {
-    title: "食玩",
-    description: "Candy Toys",
-    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E9%A3%9F%E7%8E%A9.webp",
-    link: "https://cnjphashi.com/ja/product-category/omocha/shokugan/",
+    title: "ヘアバンド",
+    description: "",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E5%8F%91%E5%B8%A6.webp",
+    link: "https://cnjphashi.com/ja/product-category/akusesarii/hea-bando/",
   },
   {
-    title: "シール",
-    description: " Stickers",
-    image: "https://cnjphashi.com/wp-content/uploads/2026/08/贴纸-分类图.webp",
-    link: "https://cnjphashi.com/ja/product-category/bunbougu/shiiru/",
+    title: "ヘアピン",
+    description: "",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E5%8F%91%E5%8D%A1.webp",
+    link: "https://cnjphashi.com/ja/product-category/akusesarii/hea-pin/",
   },
   {
-    title: "バインダー",
-    description: "Binders",
-    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E6%B4%BB%E9%A1%B5%E5%A4%B9.webp",
-    link: "https://cnjphashi.com/ja/product-category/bunbougu/baindaa/",
-  },
-  {
-    title: "ペン",
-    description: "Pens",
-    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E7%AC%94.webp",
-    link: "https://cnjphashi.com/ja/product-category/bunbougu/pen/",
+    title: "指輪",
+    description: "",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E6%88%92%E6%8C%87.webp",
+    link: "https://cnjphashi.com/ja/product-category/akusesarii/yubiwa/",
   },
 ];
 
 export const faqs = [
   {
-    question: "Hatcatoyが得意の分野は。",
-    answer: "弊社は、アミューズメント景品関連の幅広い玩具製品を扱っております。当社の製品カテゴリーには、プラスチック玩具、ぬいぐるみ、電子玩具、パズル玩具などがあります。",
+    question: "Naniwaccが得意の分野は。",
+    answer: "弊社は、アクセサリー・雑貨分野の商品企画と調達を得意としております。豊富な商品ネットワークを活かし、トレンド商品からオリジナル商品の開発まで、お客様のニーズに合わせた提案を提供いたします。",
   },
   {
-    question: "Hatcatoyは取扱商品以外でも対応できますか。",
+    question: "Naniwaccは取扱商品以外でも対応できますか。",
     answer: "はい、弊社は世界最大の雑貨卸市場義烏を拠点に、たくさんの工場と提携しており、取扱商品以外の商品をご提案・生産も可能です。",
   },
   {
-    question: "Hatcatoy製品の最低注文数量はいくらですか。",
+    question: "Naniwacc製品の最低注文数量はいくらですか。",
     answer: "最小発注量は、製品の仕様、カスタマイズの条件によって異なります。具体的な製品の最低注文数量については、弊社までお問い合わせください。 ",
   },
   {
@@ -345,7 +339,7 @@ export const faqs = [
     answer: "弊社は高品質のアフターサービスが信頼を築く鍵であると信じています。もし製品に不良がある場合、すぐに対応し、問題の原因を調査し、解決策を提供します。お客様に迅速なアフターサポートを提供することをお約束します。",
   },
   {
-    question: "Hactcatoyは製品安全性の検査をサポートできますか。",
+    question: "Naniwaccは製品安全性の検査をサポートできますか。",
     answer: "はい、弊社は国際的な検査機関であるSGSと長年の協力関係を持っております。製品の検査サービスに対応可能です。",
   },
 ];
@@ -559,11 +553,11 @@ export const paymentOptions = {
 export const companyProfile = [
   {
     title: "会社名",
-    description: "義烏希杰趣商貿有限公司"
+    description: "義烏浪速飾品有限公司"
   },
   {
     title: "英語表記",
-    description: "Yiwu CJH Trading Co., Ltd."
+    description: "Yiwu Naniwa Accessories Co., Ltd.
   },
   {
     title: "創業",
@@ -571,7 +565,7 @@ export const companyProfile = [
   },
   {
     title: "設立",
-    description: "2012年2月"
+    description: "2017年5月"
   },
   {
     title: "資本金",
@@ -588,11 +582,8 @@ export const companyProfile = [
   {
     title: "事業内容",
     description: [
-      "サプライヤーチェーン（ZAKAKING SCM）システムの運営業務",
-      "アマゾンFBA・楽天RSLへの直送サポート業務",
-      "中国国内買付けアテンド、通訳などのサポート業務",
-      "日用雑貨・服飾雑貨・玩具・バッグ・アクセサリーなどの商品提案、貿易取引",
-      "商品の仕入れ代行（OEM/ODM/在庫品）、納品管理、検品、包装、荷物保管、輸出などサプライヤーチェーントータルサービス業務"
+      "フアッションアクセサリ-の企画、製造及び卸、販壳",
+      "服飾、雜貨などの販壳",
     ]
   }
 ];
