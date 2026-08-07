@@ -291,7 +291,7 @@ export const facilities = [
   {
     title: "化粧バッグ・ポチ",
     description: "",
-    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E5%8C%96%E5%A6%86%E5%8C%85.webpp",
+    image: "https://cnjphashi.com/wp-content/uploads/2026/07/%E5%8C%96%E5%A6%86%E5%8C%85.webp",
     link: "https://cnjphashi.com/ja/product-category/baggu-sutsukeesu/keshou-baggu/",
   },
   {
